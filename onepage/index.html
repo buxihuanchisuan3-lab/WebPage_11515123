@@ -1,66 +1,58 @@
-<!doctype html>
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
-  <meta name="description" content="海洋咖啡（Ocean Coffee）— 為每一位熱愛咖啡的靈魂，精選全球產區各種精品咖啡豆。從清爽浪花果香到深海醇厚厚韻，帶您探索風味、愛上咖啡。">
-  <title>海洋咖啡 OCEAN COFFEE｜探索產區咖啡豆，讓每一杯都遇見心動風味</title>
+  <title>海洋咖啡 OCEAN COFFEE｜推廣各種咖啡豆，讓每個人都愛上咖啡</title>
+  <meta name="description" content="海洋咖啡致力於推廣世界各產區的各種咖啡豆，以海洋藍為品牌基調，打造專為喜歡咖啡的人設計的風味探索天地，讓每一位訪客都能找到屬於自己的命定咖啡。">
   
-  <!-- Google Fonts -->
+  <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Noto+Serif+TC:wght@500;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* --------------------------------------------------
-       全域變數與重設（以海洋藍為主色系）
-    -------------------------------------------------- */
+    /* =========================================================
+       1. 色彩與變數系統 (CSS Variables) - 嚴格依據 onepage.md 規範
+       ========================================================= */
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
-      --ocean-deep: #06192d;       /* 最深海藍，用於頁尾與沉穩背景 */
-      --ocean-navy: #0b2545;       /* 主深藍，標題與重要文字 */
-      --ocean-primary: #134074;    /* 核心海洋藍 */
-      --ocean-blue: #1d6fa5;       /* 明亮海藍，按鈕與重要強調 */
-      --ocean-azure: #38a3a5;      /* 碧綠海波色，點綴與亮點 */
-      --ocean-cyan: #64dfdf;       /* 淺海青，微光與強調線條 */
-      --ocean-mist: #eef6fb;       /* 浪花淡藍，區塊交替背景 */
-      --ocean-card: #f8fcff;       /* 卡片淺底 */
+      --navy-950: #04101e;
+      --navy-900: #07192f;
+      --navy-800: #0c2544;
+      --ocean-blue: #144272;
+      --ocean-mid: #205295;
+      --ocean-cyan: #0a84ff;
+      --sea-sky: #64b5f6;
+      --sea-foam: #e3f2fd;
+      --sea-mist: #f0f7fc;
       
-      --sand-gold: #cfa15a;        /* 烘焙金／沙灘色，呼應咖啡豆與溫暖點綴 */
-      --sand-light: #f4ece1;       /* 暖沙底色 */
-      --coffee-bean: #4a2c20;      /* 深咖啡豆色 */
+      --sand-gold: #e5b364;
+      --sand-hover: #f3c780;
+      --sand-light: #fbf5eb;
       
-      --text-main: #14213d;        /* 主要深色文字 */
-      --text-muted: #57738f;       /* 次要段落說明文字 */
-      --text-light: #f0f7fc;       /* 淺色字 */
+      --text-main: #0c1c2c;
+      --text-muted: #536c84;
+      --text-light: #8da4be;
+      --border-line: #d8e5f0;
       
-      --border-line: #d1e3ef;      /* 邊框線 */
-      --shadow-sm: 0 4px 12px rgba(11, 37, 69, 0.08);
-      --shadow-md: 0 10px 28px rgba(11, 37, 69, 0.12);
-      --shadow-lg: 0 20px 48px rgba(11, 37, 69, 0.18);
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
+      --card-bg: #ffffff;
+      --card-shadow: 0 14px 38px rgba(7, 25, 47, 0.08);
+      --card-shadow-hover: 0 22px 50px rgba(12, 37, 68, 0.16);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
       --radius-full: 9999px;
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      
+      --font-body: "Noto Sans TC", "Plus Jakarta Sans", sans-serif;
+      --font-title: "Noto Serif TC", serif;
+      --font-en: "Plus Jakarta Sans", sans-serif;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    * {
+    /* =========================================================
+       2. 重設與基礎設定 (Reset & Base)
+       ========================================================= */
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -72,1503 +64,1227 @@
     }
 
     body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font: 16px/1.7 "Noto Sans TC", sans-serif;
-      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: var(--font-body);
       color: var(--text-main);
-      background-color: #ffffff;
+      background-color: #fafcfe;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .eyebrow {
-      display: flex;
 
     a {
-      color: inherit;
       text-decoration: none;
-      transition: var(--transition);
+      color: inherit;
+      transition: all 0.25s ease;
     }
 
-    button, input, select {
-      font-family: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
+    img, svg {
       display: block;
+      max-width: 100%;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
     }
 
     .container {
       width: min(1200px, calc(100% - 48px));
-      margin: 0 auto;
+      margin-inline: auto;
     }
 
-    /* 標題與字體工具 */
-    .serif {
-      font-family: "Noto Serif TC", serif;
-    }
+    .serif { font-family: var(--font-title); }
+    .en-font { font-family: var(--font-en); }
 
-    .en-font {
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .section-eyebrow {
+    /* 小標籤 Badge */
+    .badge-pill {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      margin: 0 0 18px;
-      color: var(--blue);
-      font-size: 11px;
-      gap: 10px;
-      color: var(--ocean-blue);
-      font-size: 0.85rem;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
       font-weight: 700;
-      letter-spacing: .18em;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 12px;
     }
-    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
-
-    .section-eyebrow::before {
-      content: "";
-      width: 24px;
-      height: 2px;
-      background: currentColor;
-      border-radius: 2px;
+    .badge-blue {
+      background: rgba(10, 132, 255, 0.12);
+      color: #0066cc;
+      border: 1px solid rgba(10, 132, 255, 0.24);
     }
-
-    .section-title {
-      margin: 0;
-      font: 800 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .045em;
-      font-size: clamp(2rem, 3.8vw, 2.75rem);
-      font-weight: 900;
-      color: var(--ocean-navy);
-      line-height: 1.3;
-      margin-bottom: 16px;
-      letter-spacing: 0.02em;
-    }
-    .text-blue { color: var(--blue); }
-    .button, .outline-link {
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 640px;
-      line-height: 1.8;
-      margin-bottom: 40px;
+    .badge-ocean-dark {
+      background: rgba(100, 181, 246, 0.16);
+      color: var(--sea-sky);
+      border: 1px solid rgba(100, 181, 246, 0.3);
     }
 
-    .text-center {
+    /* 區塊通用標題 */
+    .section-header {
       text-align: center;
+      max-width: 680px;
+      margin: 0 auto 50px;
     }
-    .text-center .section-eyebrow {
-      justify-content: center;
+    .section-header .subtitle {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--ocean-cyan);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
     }
-    .text-center .section-eyebrow::after {
-      content: "";
-      width: 24px;
-      height: 2px;
-      background: currentColor;
-      border-radius: 2px;
+    .section-header h2 {
+      font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+      font-family: var(--font-title);
+      color: var(--navy-900);
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
     }
-    .text-center .section-subtitle {
-      margin-left: auto;
-      margin-right: auto;
+    .section-header h2 span {
+      color: var(--ocean-mid);
+      position: relative;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
     }
 
-    /* 通用按鈕 */
+    /* 按鈕樣式 */
     .btn {
       display: inline-flex;
-      min-height: 50px;
       align-items: center;
       justify-content: center;
-      padding: 10px 23px;
-      gap: 8px;
+      gap: 10px;
       padding: 13px 28px;
-      font-size: 0.95rem;
-      font-weight: 600;
       border-radius: var(--radius-full);
-      cursor: pointer;
-      transition: var(--transition);
-      border: 1px solid transparent;
-      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-blue));
-      color: #ffffff;
-      box-shadow: 0 6px 20px rgba(19, 64, 116, 0.25);
-    }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, var(--ocean-blue), #2a8bc9);
-      box-shadow: 0 8px 24px rgba(29, 111, 165, 0.35);
+    .btn:hover {
       transform: translateY(-2px);
-      color: #ffffff;
     }
-
     .btn-gold {
-      background: linear-gradient(135deg, #cfa15a, #e09f3e);
-      color: #ffffff;
-      box-shadow: 0 6px 18px rgba(207, 161, 90, 0.3);
+      background: linear-gradient(135deg, var(--sand-gold) 0%, #d49f48 100%);
+      color: var(--navy-950);
+      box-shadow: 0 8px 20px rgba(229, 179, 100, 0.35);
     }
     .btn-gold:hover {
-      background: linear-gradient(135deg, #dfb169, #f0af4e);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(207, 161, 90, 0.45);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--sand-hover) 0%, #e0ab58 100%);
+      box-shadow: 0 12px 28px rgba(229, 179, 100, 0.45);
     }
-
     .btn-outline-white {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(4px);
     }
     .btn-outline-white:hover {
-      background: #ffffff;
-      color: var(--ocean-primary);
+      background: rgba(255, 255, 255, 0.15);
       border-color: #ffffff;
-      transform: translateY(-2px);
     }
-
-    .btn-outline-blue {
-      background: transparent;
-      color: var(--ocean-primary);
-      border-color: var(--ocean-primary);
-    }
-    .btn-outline-blue:hover {
-      background: var(--ocean-primary);
+    .btn-blue {
+      background: var(--ocean-blue);
       color: #ffffff;
-      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(20, 66, 114, 0.25);
+    }
+    .btn-blue:hover {
+      background: var(--ocean-mid);
+      color: #ffffff;
     }
 
-    .btn-sm {
-      padding: 8px 18px;
-      font-size: 0.85rem;
-    }
-
-    /* --------------------------------------------------
-       導航列 (Navigation Header)
-    -------------------------------------------------- */
+    /* =========================================================
+       3. 導覽列 (Site Header & Navigation)
+       ========================================================= */
     .site-header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(209, 227, 239, 0.6);
-      transition: var(--transition);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+      padding: 20px 0;
     }
-
     .site-header.scrolled {
-      background: rgba(255, 255, 255, 0.98);
-      box-shadow: var(--shadow-sm);
+      background-color: rgba(7, 25, 47, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+      padding: 12px 0;
     }
-
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 76px;
     }
-
+    
     .brand-logo {
       display: flex;
       align-items: center;
       gap: 12px;
+      color: #ffffff;
     }
-
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--ocean-navy), var(--ocean-blue));
+    .brand-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0a84ff, #144272);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
-      box-shadow: 0 4px 10px rgba(11, 37, 69, 0.2);
+      box-shadow: 0 4px 12px rgba(10, 132, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-
     .brand-text h1 {
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: var(--ocean-navy);
-      letter-spacing: 0.05em;
+      font-size: 1.3rem;
+      font-family: var(--font-title);
+      font-weight: 700;
+      letter-spacing: 0.08em;
       line-height: 1.1;
     }
-
     .brand-text span {
-      font-size: 0.68rem;
-      font-weight: 700;
+      font-size: 0.65rem;
+      color: var(--sea-sky);
       letter-spacing: 0.22em;
-      color: var(--ocean-blue);
+      font-weight: 600;
+      text-transform: uppercase;
       display: block;
     }
 
     .nav-menu {
       display: flex;
       align-items: center;
+      gap: 32px;
       list-style: none;
-      gap: 28px;
     }
-
-    .nav-link {
-      font-size: 0.95rem;
+    .nav-menu a {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.925rem;
       font-weight: 500;
-      color: var(--text-main);
       position: relative;
       padding: 6px 0;
     }
-
-    .nav-link::after {
-      content: "";
+    .nav-menu a::after {
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 0;
+      width: 0%;
       height: 2px;
-      background: var(--ocean-blue);
-      transition: var(--transition);
+      background: var(--sea-sky);
+      transition: width 0.25s ease;
       border-radius: 2px;
-      font-size: 14px;
     }
-
-    .nav-link:hover {
-      color: var(--ocean-blue);
+    .nav-menu a:hover {
+      color: #ffffff;
     }
-    .nav-link:hover::after {
+    .nav-menu a:hover::after {
       width: 100%;
     }
 
-    .nav-actions {
+    .header-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
 
-    .mobile-menu-btn {
+    .menu-toggle {
       display: none;
-      background: none;
-      border: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
-      color: var(--ocean-navy);
-      padding: 8px;
+    }
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
-    /* --------------------------------------------------
-       Hero 區塊 (海洋與咖啡的深邃相遇)
-    -------------------------------------------------- */
+    /* =========================================================
+       4. 首屏 Hero 區塊 (Hero Section)
+       ========================================================= */
     .hero-section {
       position: relative;
-      min-height: 100vh;
-      background: linear-gradient(160deg, var(--ocean-deep) 0%, var(--ocean-navy) 40%, var(--ocean-primary) 85%, #185288 100%);
+      background: radial-gradient(circle at 80% 20%, #173b65 0%, var(--navy-900) 50%, var(--navy-950) 100%);
       color: #ffffff;
+      padding: 160px 0 100px;
+      min-height: 92vh;
       display: flex;
       align-items: center;
-      padding-top: 100px;
-      padding-bottom: 90px;
       overflow: hidden;
     }
 
-    /* 海洋流體光影與波浪背景 */
     .hero-bg-waves {
       position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      line-height: 0;
-      z-index: 2;
-    }
-
-    .hero-bg-waves svg {
-      width: 100%;
-      height: 90px;
-      fill: #ffffff;
-    }
-
-    .hero-glow-1 {
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(56, 163, 165, 0.28) 0%, transparent 70%);
-      border-radius: 50%;
-      filter: blur(60px);
+      inset: 0;
       pointer-events: none;
-    }
-
-    .hero-glow-2 {
-      position: absolute;
-      bottom: 80px;
-      left: -80px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(29, 111, 165, 0.35) 0%, transparent 70%);
-      border-radius: 50%;
-      filter: blur(50px);
-      pointer-events: none;
+      opacity: 0.35;
+      background-image: 
+        radial-gradient(ellipse at 15% 75%, rgba(10, 132, 255, 0.22) 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 35%, rgba(100, 181, 246, 0.18) 0%, transparent 45%);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
       gap: 50px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .hero-badge {
-      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: var(--radius-full);
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      color: var(--ocean-cyan);
-      margin-bottom: 24px;
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 4.8vw, 3.6rem);
-      font-weight: 900;
-      line-height: 1.25;
-      margin-bottom: 22px;
-      letter-spacing: 0.02em;
-      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-    }
-
-    .hero-title .highlight {
-      background: linear-gradient(120deg, #64dfdf 0%, #a0e8af 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-description {
-      font-size: 1.12rem;
-      line-height: 1.85;
-      color: rgba(238, 246, 251, 0.88);
-      margin-bottom: 34px;
-      max-width: 580px;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    .hero-features-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      padding-top: 24px;
-    }
-
-    .hero-feature-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .hero-feature-num {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--ocean-cyan);
-    }
-
-    .hero-feature-text {
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    /* Hero 右側卡片展示 */
-    .hero-card-showcase {
-      position: relative;
-    }
-
-    .hero-main-card {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: var(--radius-lg);
-      padding: 36px 30px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
-
-    .ocean-bean-visual {
-      width: 100%;
-      height: 240px;
-      border-radius: var(--radius-md);
-      background: linear-gradient(135deg, rgba(19, 64, 116, 0.8), rgba(6, 25, 45, 0.95)),
-                  radial-gradient(ellipse at center, rgba(100, 223, 223, 0.25) 0%, transparent 70%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      margin-bottom: 24px;
-    }
-
-    .ocean-wave-circle {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 2px dashed rgba(100, 223, 223, 0.35);
-      border-radius: 50%;
-      animation: spinSlow 30s linear infinite;
-    }
-
-    @keyframes spinSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .hero-bean-icon {
-      font-size: 4rem;
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
       position: relative;
       z-index: 2;
     }
 
-    .hero-card-badge {
-      position: absolute;
-      bottom: 12px;
-      background: rgba(6, 25, 45, 0.7);
-      padding: 4px 14px;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #e0f2fe;
+    .hero-content h2 {
+      font-size: clamp(2.3rem, 4.4vw, 3.8rem);
+      font-family: var(--font-title);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: 0.03em;
+      margin: 18px 0 22px;
     }
-
-    .hero-card-info h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
+    .hero-content h2 .highlight-blue {
+      color: var(--sea-sky);
+      text-shadow: 0 0 35px rgba(100, 181, 246, 0.35);
     }
-
-    .hero-card-info p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 16px;
+    .hero-content h2 .highlight-gold {
+      color: var(--sand-gold);
     }
-
-    .flavor-pills {
+    .hero-desc {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.85;
+      max-width: 540px;
+      margin-bottom: 34px;
+    }
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 16px;
+      margin-bottom: 42px;
     }
 
-    .pill {
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: var(--radius-full);
-      background: rgba(255, 255, 255, 0.15);
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      max-width: 520px;
+    }
+    .metric-item .number {
+      font-size: 1.7rem;
+      font-weight: 800;
+      font-family: var(--font-en);
       color: #ffffff;
+      line-height: 1;
+    }
+    .metric-item .number span {
+      color: var(--sand-gold);
+      font-size: 1.1rem;
+    }
+    .metric-item .label {
+      font-size: 0.8125rem;
+      color: var(--sea-sky);
+      margin-top: 6px;
+      display: block;
     }
 
-    .floating-mini-card {
-      position: absolute;
-      bottom: -25px;
-      left: -25px;
-      background: #ffffff;
-      color: var(--text-main);
-      padding: 14px 20px;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 4;
-      animation: floatSmooth 4s ease-in-out infinite alternate;
+    /* 右側立體海洋視覺卡 */
+    .hero-visual-card {
+      position: relative;
+      background: linear-gradient(145deg, rgba(20, 66, 114, 0.45) 0%, rgba(7, 25, 47, 0.85) 100%);
+      border: 1px solid rgba(100, 181, 246, 0.28);
+      border-radius: var(--radius-lg);
+      padding: 38px 30px;
+      box-shadow: 0 25px 60px rgba(4, 16, 30, 0.55);
+      backdrop-filter: blur(10px);
+      text-align: center;
     }
-
-    @keyframes floatSmooth {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-8px); }
-    }
-
-    .floating-mini-card .mini-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--ocean-mist);
+    .visual-ocean-art {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 24px;
       border-radius: 50%;
+      background: radial-gradient(circle at 40% 35%, #2a73c2, #0d325e 70%);
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--ocean-primary);
-      font-size: 1.2rem;
+      box-shadow: 0 0 50px rgba(10, 132, 255, 0.35);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      overflow: hidden;
     }
-
-    .floating-mini-card strong {
-      display: block;
-      font-size: 0.88rem;
-      color: var(--ocean-navy);
+    .visual-ocean-waves {
+      position: absolute;
+      bottom: 0;
+      width: 200%;
+      height: 50%;
+      background: rgba(100, 181, 246, 0.45);
+      border-radius: 40%;
+      animation: waveDrift 7s infinite linear;
     }
-
-    .floating-mini-card span {
+    @keyframes waveDrift {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .visual-coffee-bean-svg {
+      width: 72px;
+      height: 72px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+    }
+    .hero-visual-card h3 {
+      font-size: 1.35rem;
+      font-family: var(--font-title);
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .hero-visual-card p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.6;
+    }
+    .flavor-tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .flavor-pill {
       font-size: 0.75rem;
-      color: var(--text-muted);
+      padding: 4px 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-full);
+      color: var(--sea-mist);
+    }
+    .flavor-pill.active {
+      background: rgba(229, 179, 100, 0.2);
+      border-color: var(--sand-gold);
+      color: var(--sand-gold);
     }
 
-    /* --------------------------------------------------
-       品牌理念：讓客戶愛上咖啡 (Why Love Coffee)
-    -------------------------------------------------- */
-    .about-section {
-      padding: 110px 0 90px;
+    .floating-chip {
+      position: absolute;
+      background: rgba(7, 25, 47, 0.92);
+      border: 1px solid rgba(100, 181, 246, 0.4);
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8125rem;
+      color: #ffffff;
+      animation: floatChip 4s ease-in-out infinite alternate;
+    }
+    .chip-left {
+      top: -15px;
+      left: -20px;
+    }
+    .chip-right {
+      bottom: -15px;
+      right: -15px;
+      animation-delay: -2s;
+    }
+    @keyframes floatChip {
+      from { transform: translateY(0); }
+      to { transform: translateY(-8px); }
+    }
+
+    /* =========================================================
+       5. 品牌理念與核心承諾 (Why Ocean Coffee)
+       ========================================================= */
+    .philosophy-section {
+      padding: 100px 0;
       background: #ffffff;
       position: relative;
     }
-
-    .about-grid {
+    .pillars-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 50px;
+      gap: 30px;
+      margin-top: 20px;
     }
-
-    .about-card {
-      background: var(--ocean-mist);
+    .pillar-card {
+      background: var(--sea-mist);
       border: 1px solid var(--border-line);
       border-radius: var(--radius-lg);
-      padding: 40px 32px;
-      transition: var(--transition);
+      padding: 38px 28px;
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
-
-    .about-card::after {
-      content: "";
+    .pillar-card::before {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(90deg, var(--ocean-primary), var(--ocean-cyan));
+      background: linear-gradient(90deg, var(--ocean-cyan), var(--ocean-blue));
       opacity: 0;
-      transition: var(--transition);
+      transition: opacity 0.3s ease;
     }
-
-    .about-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md);
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow);
       background: #ffffff;
-      border-color: rgba(29, 111, 165, 0.35);
+      border-color: rgba(10, 132, 255, 0.3);
     }
-
-    .about-card:hover::after {
+    .pillar-card:hover::before {
       opacity: 1;
     }
-
-    .about-card-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: var(--radius-md);
-      background: #ffffff;
-      box-shadow: var(--shadow-sm);
+    .pillar-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      background: rgba(10, 132, 255, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--ocean-blue);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
+      color: var(--ocean-mid);
     }
-
-    .about-card:hover .about-card-icon {
-      background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-blue));
-      color: #ffffff;
-    }
-
-    .about-card h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
-      color: var(--ocean-navy);
+    .pillar-card h3 {
+      font-size: 1.25rem;
+      font-family: var(--font-title);
+      color: var(--navy-900);
       margin-bottom: 12px;
     }
-    .button:hover, .outline-link:hover { transform: translateY(-2px); }
-    .button--sand { color: var(--navy); background: var(--sand); }
-    .button--sand:hover { background: #f1cb8b; }
-    .button--dark { color: var(--navy); background: #fff; }
-    .outline-link { border-color: rgba(255,255,255,.72); color: #fff; }
-    .outline-link:hover { color: var(--navy); background: #fff; }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
-
-    /* Header & hero */
-    .site-header { position: absolute; z-index: 20; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.28); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; }
-    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid var(--sky); border-radius: 50%; color: var(--sky); font: 700 16px/1 "Playfair Display", serif; }
-    .brand-copy { display: grid; line-height: 1.05; }
-    .brand-copy strong { font-size: 13px; letter-spacing: .08em; }
-    .brand-copy small { margin-top: 4px; font-size: 8px; letter-spacing: .18em; opacity: .7; }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 31px); }
-    .nav-links a { position: relative; color: #fff; font-size: 13px; font-weight: 500; white-space: nowrap; }
-    .nav-links a:not(.nav-cta)::after { position: absolute; right: 0; bottom: -5px; left: auto; width: 0; height: 1px; background: var(--sky); content: ""; transition: width .25s ease; }
-    .nav-links a:not(.nav-cta):hover::after { right: auto; left: 0; width: 100%; }
-    .nav-links .nav-cta { padding: 8px 13px; border: 1px solid rgba(255,255,255,.72); }
-    .nav-links .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; font-size: 23px; line-height: 1; }
-    .about-card p {
-      font-size: 0.95rem;
+    .pillar-card p {
       color: var(--text-muted);
+      font-size: 0.95rem;
       line-height: 1.7;
     }
 
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); isolation: isolate; }
-    .hero::before { position: absolute; z-index: -2; top: -320px; right: -210px; width: 810px; height: 810px; border-radius: 50%; background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, transparent 69%); content: ""; }
-    .hero::after { position: absolute; z-index: -1; right: 12%; bottom: -430px; width: 780px; height: 780px; border: 1px solid rgba(117,198,232,.18); border-radius: 50%; box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025); content: ""; }
-    .hero-grid { min-height: 704px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; padding: 122px 0 72px; }
-    .hero-copy { position: relative; z-index: 2; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero h1 { max-width: 650px; margin: 0 0 23px; font: 800 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .hero h1 span { color: var(--sky); }
-    .hero-lede { max-width: 500px; margin: 0; color: rgba(255,255,255,.79); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
-    .hero-note { margin: 31px 0 0; color: rgba(255,255,255,.55); font: 600 11px/1.5 "Playfair Display", serif; letter-spacing: .16em; }
-    .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
-    .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
-    /* --------------------------------------------------
-       各種咖啡豆專區 (Featured Coffee Beans)
-    -------------------------------------------------- */
+    /* =========================================================
+       6. 各種咖啡豆展區 (All Kinds of Beans Catalog)
+       ========================================================= */
     .beans-section {
-      padding: 100px 0;
-      background: linear-gradient(180deg, #f7fbfe 0%, #eef5fb 100%);
-      border-top: 1px solid var(--border-line);
-      border-bottom: 1px solid var(--border-line);
+      padding: 110px 0;
+      background: linear-gradient(180deg, #f0f7fc 0%, #ffffff 100%);
+      position: relative;
     }
 
-    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: hidden; }
-    .hero-art .sun { position: absolute; top: 52px; right: 54px; width: clamp(138px, 18vw, 200px); aspect-ratio: 1; border-radius: 50%; background: #b9e8f5; box-shadow: 0 0 0 27px rgba(117,198,232,.09), 0 0 0 59px rgba(117,198,232,.045); }
-    .mountain { position: absolute; right: -11%; bottom: 6px; width: 116%; height: 260px; transform: skewY(-9deg); transform-origin: right bottom; background: linear-gradient(146deg, transparent 0 27%, rgba(61,145,184,.36) 27.3% 48%, rgba(17,97,143,.77) 48.3%); clip-path: polygon(0 62%, 28% 20%, 44% 57%, 68% 4%, 100% 57%, 100% 100%, 0 100%); }
-    .mountain--back { right: 13%; bottom: 98px; width: 108%; height: 220px; opacity: .46; transform: skewY(-4deg); background: #2a81ae; clip-path: polygon(0 84%, 31% 30%, 45% 62%, 66% 9%, 100% 66%, 100% 100%, 0 100%); }
-    .horizon { position: absolute; right: -4%; bottom: 0; width: 116%; height: 112px; background: linear-gradient(90deg, rgba(7,45,75,.5), #0d5684); transform: skewY(-4deg); }
-    .coffee-vessel { position: absolute; z-index: 4; right: 18%; bottom: 36px; width: 192px; height: 274px; filter: drop-shadow(18px 22px 14px rgba(0,0,0,.22)); }
-    .vessel-neck { position: absolute; top: 0; left: 62px; width: 68px; height: 42px; border: 7px solid #b3e2ef; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgba(6,39,66,.62); }
-    .vessel-body { position: absolute; top: 33px; left: 18px; width: 150px; height: 212px; border: 7px solid #b3e2ef; border-radius: 31% 31% 42% 42% / 12% 12% 37% 37%; background: linear-gradient(90deg, rgba(30,112,151,.9), rgba(5,35,60,.9) 45%, rgba(83,167,198,.8)); overflow: hidden; }
-    .vessel-body::before { position: absolute; top: 15px; left: 0; width: 100%; height: 5px; background: rgba(197,237,244,.8); box-shadow: 0 48px rgba(197,237,244,.25), 0 95px rgba(197,237,244,.18), 0 145px rgba(197,237,244,.13); content: ""; }
-    .vessel-body::after { position: absolute; top: 5px; left: 48%; width: 24px; height: 200px; border-radius: 50%; background: rgba(218,247,251,.17); content: ""; }
-    .vessel-handle { position: absolute; right: 0; bottom: 49px; width: 62px; height: 98px; border: 10px solid #a9dce9; border-left: 0; border-radius: 0 53px 53px 0; }
-    .art-label { position: absolute; z-index: 5; right: 0; bottom: 64px; display: grid; gap: 3px; color: rgba(255,255,255,.73); font-size: 11px; letter-spacing: .1em; text-align: right; }
-    .art-label strong { color: var(--sky); font: 700 22px/1 "Playfair Display", serif; }
-    /* 焙度與風味篩選標籤 */
-    .filter-tabs {
+    .catalog-filters {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 48px;
+      gap: 10px;
+      margin-bottom: 45px;
     }
-
-    /* Story */
-    .story { padding: 118px 0; background: #fff; }
-    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .story-visual { position: relative; min-height: 416px; }
-    .seal { position: absolute; top: 0; left: 0; width: 310px; height: 310px; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
-    .seal::before, .seal::after { position: absolute; border: 1px solid rgba(12,91,149,.25); border-radius: 50%; content: ""; }
-    .seal::before { inset: 17px; }
-    .seal::after { inset: 44px; border-style: dashed; }
-    .seal-inner { position: relative; z-index: 1; display: grid; gap: 7px; text-align: center; }
-    .seal-inner b { font: 700 42px/1 "Playfair Display", serif; }
-    .seal-inner span { font-size: 13px; font-weight: 700; letter-spacing: .1em; }
-    .seal-inner small { font: 600 9px/1.5 "Playfair Display", serif; letter-spacing: .15em; }
-    .blue-note { position: absolute; right: 0; bottom: 0; width: 235px; padding: 27px 28px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .blue-note .eyebrow { margin-bottom: 9px; color: var(--sky); font-size: 9px; }
-    .blue-note p { margin: 0; font: 700 20px/1.55 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .story-copy p { margin: 19px 0 0; color: var(--muted); }
-    .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid var(--blue); color: var(--blue); font-weight: 700; }
-    .inline-link:hover { color: var(--navy); }
     .filter-btn {
       padding: 10px 22px;
       border-radius: var(--radius-full);
-      background: #ffffff;
-      border: 1px solid var(--border-line);
-      color: var(--text-muted);
       font-size: 0.9rem;
       font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: var(--shadow-sm);
+      color: var(--text-muted);
+      background: #ffffff;
+      border: 1px solid var(--border-line);
+      transition: all 0.25s ease;
     }
-
-    /* Coffee collection */
-    .coffee { padding: 111px 0 120px; background: var(--mist); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 39px; }
-    .section-heading p { max-width: 370px; margin: 0; color: var(--muted); }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; display: flex; flex-direction: column; overflow: hidden; padding: 30px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-card::after { position: absolute; right: -90px; bottom: -90px; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; box-shadow: 0 0 0 27px rgba(255,255,255,.045), 0 0 0 65px rgba(255,255,255,.025); content: ""; }
-    .card-top, .coffee-card h3, .flavour, .card-footer { position: relative; z-index: 1; }
-    .card-top { color: var(--sky); font: 700 12px/1.3 "Playfair Display", serif; letter-spacing: .12em; }
-    .origin { margin: 25px 0 8px; color: rgba(255,255,255,.69); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
-    .coffee-card h3 { margin: 0; font: 700 26px/1.38 "Noto Serif TC", serif; letter-spacing: .04em; }
-    .flavour { margin: 15px 0 0; color: rgba(255,255,255,.73); font-size: 14px; }
-    .card-footer { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-top: auto; }
-    .price { font: 700 15px/1.3 "Playfair Display", serif; letter-spacing: .04em; }
-    .save-coffee { padding: 0 0 5px; border: 0; border-bottom: 1px solid rgba(255,255,255,.72); color: #fff; background: transparent; font-size: 13px; font-weight: 700; white-space: nowrap; transition: color .2s, border-color .2s; }
-    .save-coffee:hover { border-color: var(--sand); color: var(--sand); }
     .filter-btn:hover {
+      border-color: var(--ocean-cyan);
       color: var(--ocean-blue);
-      border-color: var(--ocean-blue);
     }
-
-    /* Brew */
-    .brew { padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
-    .brew-art { position: relative; height: 414px; overflow: hidden; background: linear-gradient(136deg, #e3f4f7 0 48%, #f8fcfc 48% 100%); }
-    .brew-art::before { position: absolute; top: 37px; left: 35px; width: 68px; height: 41px; border-top: 1px solid #6cb4ce; border-bottom: 1px solid #6cb4ce; content: ""; }
-    .brew-art::after { position: absolute; top: 57px; left: 35px; width: 43px; border-top: 1px solid #6cb4ce; content: ""; }
-    .water-rings { position: absolute; top: 67px; left: 50%; width: 245px; height: 245px; border: 1px solid rgba(12,91,149,.27); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 0 30px rgba(117,198,232,.12), 0 0 0 74px rgba(117,198,232,.065); }
-    .water-rings::before { position: absolute; top: 18px; left: 50%; width: 1px; height: 58px; background: #6bb8d1; content: ""; transform: translateX(-50%); }
-    .dripper { position: absolute; z-index: 2; top: 134px; left: 50%; width: 147px; height: 151px; border: 7px solid var(--blue); border-top: 0; background: linear-gradient(130deg, rgba(255,255,255,.85), rgba(117,198,232,.25)); clip-path: polygon(0 0, 100% 0, 74% 100%, 26% 100%); transform: translateX(-50%); }
-    .dripper::after { position: absolute; right: 32px; bottom: 19px; left: 32px; height: 33px; border-top: 2px solid rgba(12,91,149,.55); border-bottom: 2px solid rgba(12,91,149,.35); content: ""; }
-    .carafe { position: absolute; z-index: 1; bottom: 56px; left: 50%; width: 139px; height: 106px; border: 6px solid var(--blue); border-radius: 16px 16px 45% 45%; background: rgba(117,198,232,.23); transform: translateX(-50%); }
-    .carafe::before { position: absolute; top: -28px; left: 29px; width: 70px; height: 28px; border: 6px solid var(--blue); border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
-    .brew-caption { position: absolute; right: 24px; bottom: 19px; color: var(--blue); text-align: right; }
-    .brew-caption span { display: block; font: 700 11px/1.5 "Playfair Display", serif; letter-spacing: .12em; }
-    .brew-caption strong { font: 700 24px/1.1 "Playfair Display", serif; }
-    .brew-copy > p { margin: 18px 0 25px; color: var(--muted); }
-    .brew-steps { border-top: 1px solid var(--line); }
-    .brew-step { display: grid; grid-template-columns: 52px 1fr; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .step-number { color: var(--blue); font: 700 24px/1 "Playfair Display", serif; }
-    .brew-step h3 { margin: 0; font: 700 16px/1.5 "Noto Serif TC", serif; }
-    .brew-step p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
     .filter-btn.active {
-      background: var(--ocean-navy);
+      background: var(--ocean-blue);
       color: #ffffff;
-      border-color: var(--ocean-navy);
-      box-shadow: 0 4px 14px rgba(11, 37, 69, 0.25);
+      border-color: var(--ocean-blue);
+      box-shadow: 0 4px 14px rgba(20, 66, 114, 0.28);
     }
 
-    /* Subscribe and footer */
-    .visit { position: relative; overflow: hidden; padding: 108px 0 113px; color: #fff; text-align: center; background: var(--navy); }
-    .visit::before, .visit::after { position: absolute; width: 390px; height: 390px; border: 1px solid rgba(117,198,232,.17); border-radius: 50%; content: ""; }
-    .visit::before { top: -245px; left: -153px; box-shadow: 0 0 0 45px rgba(117,198,232,.035); }
-    .visit::after { right: -170px; bottom: -260px; box-shadow: 0 0 0 50px rgba(117,198,232,.035); }
-    .visit .wrap { position: relative; z-index: 1; max-width: 715px; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit h2 { margin: 0; font: 800 clamp(30px, 4vw, 46px)/1.3 "Noto Serif TC", serif; letter-spacing: .045em; }
-    .visit p { max-width: 510px; margin: 19px auto 29px; color: rgba(255,255,255,.72); }
-    .subscribe-form { display: flex; min-height: 58px; border: 1px solid rgba(255,255,255,.62); }
-    .subscribe-form input { min-width: 0; flex: 1; padding: 0 18px; border: 0; color: #fff; outline: none; background: transparent; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,.56); }
-    .subscribe-form button { padding: 0 23px; border: 0; color: var(--navy); background: var(--sand); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background .2s; }
-    .subscribe-form button:hover { background: #f1cb8b; }
-    .site-footer { padding: 66px 0 23px; color: rgba(255,255,255,.68); background: #031c31; }
-    .footer-grid { display: grid; grid-template-columns: 1.45fr .8fr 1fr; gap: 55px; padding-bottom: 48px; }
-    .footer-brand .brand { margin-bottom: 16px; }
-    .footer-brand p { max-width: 330px; margin: 0; font-size: 14px; }
-    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
-    .footer-links { display: grid; gap: 8px; font-size: 14px; }
-    .footer-links a:hover { color: var(--sky); }
-    .footer-links address { font-style: normal; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.44); font: 600 10px/1.5 "Playfair Display", serif; letter-spacing: .1em; }
-    /* 咖啡豆卡片網格 */
     .beans-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
     }
-
-    .toast { position: fixed; z-index: 50; right: 22px; bottom: 22px; max-width: min(370px, calc(100vw - 44px)); padding: 14px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); font-size: 14px; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
     .bean-card {
       background: #ffffff;
+      border: 1px solid var(--border-line);
       border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(209, 227, 239, 0.8);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
+      padding: 28px;
+      box-shadow: var(--card-shadow);
       display: flex;
       flex-direction: column;
-    }
-
-    @media (max-width: 820px) {
-      .menu-toggle { display: grid; place-items: center; }
-      .nav { position: relative; }
-      .nav-links { position: absolute; top: 78px; right: -24px; left: -24px; max-height: 0; display: grid; gap: 0; overflow: hidden; background: #05233c; transition: max-height .35s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.16); }
-      .nav-links a { display: block; padding: 13px 24px; }
-      .nav-links .nav-cta { margin: 5px 24px 15px; padding: 10px 13px; text-align: center; }
-      .hero { min-height: 710px; }
-      .hero-grid { min-height: 710px; grid-template-columns: 1fr; gap: 0; padding: 118px 0 43px; }
-      .hero-art { min-height: 276px; margin-top: -9px; }
-      .hero-art .sun { top: 19px; right: 20%; width: 130px; }
-      .mountain { height: 180px; }
-      .mountain--back { bottom: 69px; height: 150px; }
-      .coffee-vessel { right: 17%; bottom: -12px; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { display: none; }
-      .scroll-cue { display: none; }
-      .story-grid, .brew-grid { grid-template-columns: 1fr; }
-      .story-visual { max-width: 525px; width: 100%; min-height: 400px; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:nth-child(3) { grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
-    .bean-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--ocean-cyan);
-    }
-    @media (max-width: 560px) {
-      .wrap { width: calc(100% - 34px); }
-      .nav-links { right: -17px; left: -17px; }
-      .hero { min-height: 680px; }
-      .hero-grid { min-height: 680px; padding-top: 106px; }
-      .hero h1 { font-size: 40px; }
-      .hero-lede { font-size: 14px; }
-      .hero-actions { gap: 9px; margin-top: 24px; }
-      .hero-actions .button, .hero-actions .outline-link { min-height: 46px; padding: 8px 15px; font-size: 13px; }
-      .hero-note { margin-top: 21px; }
-      .hero-art { min-height: 219px; }
-      .hero-art .sun { width: 92px; }
-      .coffee-vessel { right: 5%; bottom: -48px; transform: scale(.57); }
-      .story, .coffee, .brew { padding: 76px 0; }
-      .seal { width: 245px; height: 245px; }
-      .seal-inner b { font-size: 35px; }
-      .story-visual { min-height: 347px; }
-      .blue-note { width: 185px; padding: 20px; }
-      .blue-note p { font-size: 16px; }
-      .section-heading { display: block; margin-bottom: 28px; }
-      .section-heading p { margin-top: 14px; font-size: 14px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:nth-child(3) { min-height: 330px; grid-column: auto; }
-      .coffee-card { padding: 25px; }
-      .brew-art { height: 310px; }
-      .water-rings { top: 45px; width: 178px; height: 178px; box-shadow: 0 0 0 23px rgba(117,198,232,.12), 0 0 0 53px rgba(117,198,232,.065); }
-      .dripper { top: 95px; transform: translateX(-50%) scale(.75); }
-      .carafe { bottom: 37px; transform: translateX(-50%) scale(.75); }
-      .visit { padding: 76px 0; }
-      .subscribe-form { display: grid; gap: 0; border: 0; }
-      .subscribe-form input { min-height: 54px; border: 1px solid rgba(255,255,255,.62); }
-      .subscribe-form button { min-height: 54px; margin-top: 10px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 33px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: grid; gap: 8px; }
-
-    .bean-card-header {
-      padding: 24px;
-      background: linear-gradient(135deg, #f0f7fc 0%, #e4eff8 100%);
       position: relative;
-      border-bottom: 1px solid var(--border-line);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-      .reveal { opacity: 1; transform: none; }
-
-    .bean-roast-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
+    .bean-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: rgba(10, 132, 255, 0.35);
     }
-
-    .roast-light {
-      background: #e1f5fe;
-      color: #0288d1;
-      border: 1px solid #b3e5fc;
-    }
-
-    .roast-medium {
-      background: #fff8e1;
-      color: #f57f17;
-      border: 1px solid #ffe082;
-    }
-
-    .roast-dark {
-      background: #efebe9;
-      color: #4e342e;
-      border: 1px solid #d7ccc8;
-    }
-
-    .roast-special {
-      background: #ede7f6;
-      color: #512da8;
-      border: 1px solid #d1c4e9;
-    }
-
-    .bean-origin {
-      font-size: 0.82rem;
-      color: var(--ocean-blue);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .bean-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--ocean-navy);
-      line-height: 1.35;
-    }
-
-    .bean-process {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .bean-card-body {
-      padding: 24px;
-      flex: 1;
+    
+    .bean-top-meta {
       display: flex;
-      flex-direction: column;
-    }
-
-    .bean-flavor-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 20px;
-    }
-
-    .flavor-tag {
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 4px;
-      background: var(--ocean-mist);
-      color: var(--ocean-primary);
-      font-weight: 500;
-      border: 1px solid rgba(29, 111, 165, 0.15);
-    }
-
-    /* 風味雷達數據條 */
-    .flavor-meters {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-      padding: 14px 16px;
-      background: #fbfdff;
-      border-radius: var(--radius-sm);
-      border: 1px solid #edf4fa;
-    }
-
-    .meter-row {
-      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      font-size: 0.8rem;
+      margin-bottom: 16px;
     }
-
-    .meter-label {
-      width: 45px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .meter-bar-track {
-      flex: 1;
-      height: 6px;
-      background: #e2edf6;
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .meter-bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: linear-gradient(90deg, var(--ocean-blue), var(--ocean-cyan));
-    }
-
-    .meter-val {
-      width: 28px;
-      text-align: right;
-      font-weight: 700;
-      color: var(--ocean-navy);
+    .roast-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+    .roast-light {
+      background: #fff3e0;
+      color: #d97706;
+    }
+    .roast-medium {
+      background: #fef3c7;
+      color: #b45309;
+    }
+    .roast-dark {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+    .origin-country {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
     }
 
+    .bean-card h3 {
+      font-size: 1.35rem;
+      font-family: var(--font-title);
+      color: var(--navy-900);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .bean-subname {
+      font-size: 0.8125rem;
+      color: var(--ocean-cyan);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
     .bean-desc {
       font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.65;
-      margin-bottom: 20px;
-      flex: 1;
+      margin-bottom: 18px;
+      flex-grow: 1;
     }
 
-    .bean-card-footer {
+    .bean-flavor-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px dashed var(--border-line);
+    }
+    .flavor-chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      background: var(--sea-foam);
+      color: var(--ocean-mid);
+      border-radius: var(--radius-full);
+    }
+
+    .flavor-meters {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .meter-row {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-top: 18px;
-      border-top: 1px solid #edf4fa;
-    }
-
-    .bean-price-box {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .bean-weight {
+      gap: 10px;
       font-size: 0.75rem;
       color: var(--text-muted);
     }
-
-    .bean-price {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--ocean-navy);
+    .meter-label {
+      width: 42px;
+      font-weight: 600;
+    }
+    .meter-bar {
+      flex: 1;
+      height: 6px;
+      background: #e9eef5;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .meter-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--ocean-cyan), var(--ocean-blue));
+      border-radius: 3px;
     }
 
-    /* --------------------------------------------------
-       命定咖啡探索測驗 (Coffee Flavor Quiz)
-    -------------------------------------------------- */
+    .bean-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .bean-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      font-family: var(--font-en);
+      color: var(--navy-900);
+    }
+    .bean-price span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+    .btn-bean-fav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--sea-mist);
+      color: var(--ocean-blue);
+      border: 1px solid var(--border-line);
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+    .btn-bean-fav:hover {
+      background: var(--ocean-blue);
+      color: #ffffff;
+      border-color: var(--ocean-blue);
+    }
+
+    /* =========================================================
+       7. 核心功能：咖啡風味測驗 (Quiz)
+       ========================================================= */
     .quiz-section {
-      padding: 100px 0;
-      background: linear-gradient(135deg, var(--ocean-navy) 0%, var(--ocean-primary) 100%);
+      padding: 110px 0;
+      background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 60%, #102e52 100%);
       color: #ffffff;
       position: relative;
       overflow: hidden;
     }
-
-    .quiz-box {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: var(--radius-lg);
-      padding: 44px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    .quiz-section::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(10, 132, 255, 0.2) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .quiz-step {
-      margin-bottom: 30px;
+    .quiz-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(100, 181, 246, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
     }
 
     .quiz-step-title {
       font-size: 1.15rem;
       font-weight: 700;
+      color: var(--sea-sky);
       margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 10px;
-      color: var(--ocean-cyan);
+    }
+    .quiz-step-title .step-badge {
+      width: 28px;
+      height: 28px;
+      background: var(--ocean-cyan);
+      color: #ffffff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8125rem;
     }
 
     .quiz-options {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 34px;
     }
-
     .quiz-option {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
       border-radius: var(--radius-md);
       padding: 18px 20px;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.25s ease;
       text-align: left;
-      color: #ffffff;
     }
-
     .quiz-option:hover {
-      background: rgba(255, 255, 255, 0.18);
-      border-color: var(--ocean-cyan);
-      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--sea-sky);
     }
-
     .quiz-option.selected {
-      background: rgba(100, 223, 223, 0.25);
+      background: rgba(10, 132, 255, 0.25);
       border-color: var(--ocean-cyan);
-      box-shadow: 0 0 16px rgba(100, 223, 223, 0.35);
+      box-shadow: 0 0 20px rgba(10, 132, 255, 0.35);
     }
-
-    .quiz-option-title {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 6px;
+    .quiz-option strong {
       display: block;
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin-bottom: 4px;
     }
-
-    .quiz-option-desc {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.7);
-      display: block;
+    .quiz-option span {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.72);
       line-height: 1.5;
     }
 
-    .quiz-result-card {
-      margin-top: 36px;
-      padding: 28px;
-      background: #ffffff;
-      border-radius: var(--radius-md);
-      color: var(--text-main);
+    .quiz-result-box {
       display: none;
-      animation: fadeIn 0.5s ease-out forwards;
+      background: linear-gradient(135deg, rgba(20, 66, 114, 0.8), rgba(7, 25, 47, 0.95));
+      border: 1.5px solid var(--sand-gold);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      margin-top: 30px;
+      animation: fadeIn 0.4s ease;
     }
-
+    .quiz-result-box.active {
+      display: block;
+    }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .result-badge {
       display: inline-block;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      background: var(--ocean-mist);
-      color: var(--ocean-primary);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .result-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--ocean-navy);
+      color: var(--sand-gold);
+      letter-spacing: 0.12em;
       margin-bottom: 8px;
     }
-
-    .result-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 18px;
+    .result-bean-title {
+      font-size: 1.6rem;
+      font-family: var(--font-title);
+      color: #ffffff;
+      margin-bottom: 10px;
     }
-
-    .promo-banner {
-      background: linear-gradient(90deg, #f7fafc, #edf5fa);
-      border-left: 4px solid var(--sand-gold);
-      padding: 12px 18px;
-      border-radius: 4px;
-      font-size: 0.88rem;
+    .result-desc {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
-
-    /* --------------------------------------------------
-       手沖萃取 4 步驟日常 (Brewing Routine Guide)
-    -------------------------------------------------- */
-    .brew-section {
-      padding: 110px 0;
-      background: #ffffff;
+    .result-brew-tip {
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid var(--ocean-cyan);
+      padding: 12px 18px;
+      font-size: 0.875rem;
+      color: var(--sea-mist);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 24px;
     }
 
-    .brew-grid {
+    /* =========================================================
+       8. 沖煮與品味指南 (How to Fall in Love with Coffee)
+       ========================================================= */
+    .guide-section {
+      padding: 100px 0;
+      background: #ffffff;
+    }
+    .guide-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
-      margin-top: 50px;
+      margin-top: 40px;
     }
-
-    .brew-step-card {
-      background: #ffffff;
-      border: 1px solid var(--border-line);
-      border-radius: var(--radius-md);
-      padding: 32px 24px;
-      position: relative;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brew-step-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--ocean-blue);
-      transform: translateY(-5px);
-    }
-
-    .brew-step-num {
-      font-size: 3rem;
-      font-weight: 900;
-      color: #e2edf6;
-      line-height: 1;
-      margin-bottom: 16px;
-      transition: var(--transition);
-    }
-
-    .brew-step-card:hover .brew-step-num {
-      color: var(--ocean-cyan);
-    }
-
-    .brew-step-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--ocean-navy);
-      margin-bottom: 10px;
-    }
-
-    .brew-step-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* 手沖互動計時器 */
-    .brew-timer-widget {
-      max-width: 650px;
-      margin: 60px auto 0;
-      background: var(--ocean-mist);
+    .guide-card {
+      background: var(--sea-mist);
       border: 1px solid var(--border-line);
       border-radius: var(--radius-lg);
-      padding: 36px;
+      padding: 30px 22px;
       text-align: center;
+      transition: all 0.3s ease;
     }
-
-    .timer-display {
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--ocean-navy);
-      margin: 16px 0;
-      letter-spacing: 0.05em;
+    .guide-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow);
+      background: #ffffff;
+      border-color: rgba(10, 132, 255, 0.35);
     }
-
-    .timer-controls {
+    .guide-icon-wrapper {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: rgba(10, 132, 255, 0.12);
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 14px;
+      color: var(--ocean-mid);
+    }
+    .guide-card h3 {
+      font-size: 1.15rem;
+      font-family: var(--font-title);
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+    .guide-card .suitable-bean {
+      font-size: 0.75rem;
+      color: var(--ocean-cyan);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .guide-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
     }
 
-    /* --------------------------------------------------
-       顧客推薦與口碑 (Reviews)
-    -------------------------------------------------- */
-    .reviews-section {
-      padding: 90px 0;
-      background: #f7fbfe;
-      border-top: 1px solid var(--border-line);
+    .tasting-steps-box {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #0e3056, #07192f);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      color: #ffffff;
+      box-shadow: var(--card-shadow);
     }
-
-    .reviews-grid {
+    .tasting-steps-box h3 {
+      font-size: 1.5rem;
+      font-family: var(--font-title);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .tasting-steps-box h3 span {
+      color: var(--sand-gold);
+    }
+    .steps-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      margin-top: 40px;
+    }
+    .step-col {
+      position: relative;
+      padding-left: 20px;
+      border-left: 2px solid rgba(100, 181, 246, 0.4);
+    }
+    .step-col strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--sea-sky);
+      margin-bottom: 6px;
+    }
+    .step-col p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
     }
 
+    /* =========================================================
+       9. 咖啡同好分享 (Community Voices)
+       ========================================================= */
+    .reviews-section {
+      padding: 100px 0;
+      background: var(--sea-mist);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
     .review-card {
       background: #ffffff;
-      border-radius: var(--radius-md);
-      padding: 30px;
       border: 1px solid var(--border-line);
-      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
     }
-
-    .stars {
+    .review-stars {
       color: #f59e0b;
       margin-bottom: 14px;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
     }
-
     .review-text {
       font-size: 0.95rem;
       color: var(--text-main);
-      line-height: 1.75;
+      line-height: 1.7;
       margin-bottom: 20px;
+      flex-grow: 1;
+      font-style: italic;
     }
-
-    .reviewer-info {
+    .reviewer-meta {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-
     .reviewer-avatar {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: var(--ocean-mist);
-      color: var(--ocean-primary);
+      background: var(--ocean-blue);
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
+      font-size: 0.9rem;
     }
-
-    .reviewer-name {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--ocean-navy);
+    .reviewer-info h4 {
+      font-size: 0.925rem;
+      color: var(--navy-900);
     }
-
-    .reviewer-tag {
-      font-size: 0.78rem;
+    .reviewer-info span {
+      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
-    /* --------------------------------------------------
-       電子報訂閱與推廣 (Newsletter & Promotion)
-    -------------------------------------------------- */
-    .newsletter-section {
-      padding: 90px 0;
-      background: linear-gradient(135deg, var(--ocean-navy) 0%, var(--ocean-deep) 100%);
+    /* =========================================================
+       10. 品味沙龍預約與訂閱 (Experience & Newsletter CTA)
+       ========================================================= */
+    .booking-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--navy-900) 0%, #0c2b4d 100%);
       color: #ffffff;
-      text-align: center;
+      position: relative;
     }
-
-    .newsletter-box {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .newsletter-box .section-title {
-      color: #ffffff;
-    }
-
-    .newsletter-form {
-      display: flex;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .newsletter-input {
-      flex: 1;
-      padding: 14px 20px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
-      font-size: 0.95rem;
-      outline: none;
-    }
-
-    .newsletter-input::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .newsletter-input:focus {
-      border-color: var(--ocean-cyan);
-      background: rgba(255, 255, 255, 0.16);
-    }
-
-    .subscribe-alert {
-      margin-top: 16px;
-      font-size: 0.88rem;
-      color: var(--ocean-cyan);
-      display: none;
-    }
-
-    /* --------------------------------------------------
-       頁尾 (Footer)
-    -------------------------------------------------- */
-    .site-footer {
-      background: #040f1c;
-      color: #8fa5b8;
-      padding: 70px 0 30px;
-      font-size: 0.9rem;
-    }
-
-    .footer-grid {
+    .booking-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 40px;
-      margin-bottom: 50px;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
     }
-
-    .footer-brand h2 {
-      font-size: 1.4rem;
-      color: #ffffff;
-      margin-bottom: 12px;
-    }
-
-    .footer-brand p {
-      line-height: 1.7;
-      max-width: 320px;
-    }
-
-    .footer-links h4, .footer-contact h4 {
-      color: #ffffff;
-      font-size: 1rem;
+    .booking-info h2 {
+      font-size: 2.2rem;
+      font-family: var(--font-title);
+      line-height: 1.35;
       margin-bottom: 18px;
     }
-
-    .footer-links ul {
-      list-style: none;
+    .booking-info h2 span {
+      color: var(--sand-gold);
+    }
+    .booking-info p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .booking-perks {
+      display: grid;
+      gap: 14px;
+    }
+    .perk-item {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--sea-mist);
+    }
+    .perk-item svg {
+      color: var(--sea-sky);
+      flex-shrink: 0;
     }
 
+    .booking-form-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(100, 181, 246, 0.28);
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--sea-sky);
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(4, 16, 30, 0.6);
+      color: #ffffff;
+      font-size: 0.95rem;
+      transition: border-color 0.25s ease;
+    }
+    .form-control:focus {
+      border-color: var(--ocean-cyan);
+    }
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* =========================================================
+       11. 頁尾 (Footer)
+       ========================================================= */
+    .site-footer {
+      background: var(--navy-950);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 80px 0 35px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    .footer-about .brand-logo {
+      margin-bottom: 16px;
+    }
+    .footer-about p {
+      line-height: 1.7;
+      max-width: 320px;
+      margin-bottom: 20px;
+    }
+    .footer-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 18px;
+      letter-spacing: 0.06em;
+    }
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
     .footer-links a:hover {
-      color: var(--ocean-cyan);
+      color: var(--sea-sky);
+      padding-left: 4px;
+    }
+    .footer-contact-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      font-size: 0.875rem;
+    }
+
+    .footer-newsletter-input {
+      display: flex;
+      margin-top: 14px;
+    }
+    .footer-newsletter-input input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      font-size: 0.85rem;
+    }
+    .footer-newsletter-input button {
+      padding: 10px 16px;
+      background: var(--sand-gold);
+      color: var(--navy-950);
+      font-weight: 700;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.85rem;
+    }
+    .footer-newsletter-input button:hover {
+      background: var(--sand-hover);
     }
 
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 24px;
+      padding-top: 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.82rem;
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.45);
     }
 
-    /* 彈跳通知 Toast */
+    /* =========================================================
+       12. 互動通知 Toast (Toast Notification)
+       ========================================================= */
     .toast-notice {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--ocean-navy);
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      background: var(--navy-900);
       color: #ffffff;
-      padding: 14px 22px;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
-      border-left: 4px solid var(--ocean-cyan);
-      z-index: 2000;
-      transform: translateY(120%);
-      opacity: 0;
-      transition: var(--transition);
+      border-left: 4px solid var(--sand-gold);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      border-radius: var(--radius-sm);
+      padding: 16px 22px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
+      gap: 14px;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      pointer-events: none;
+      max-width: 380px;
     }
-
     .toast-notice.show {
       transform: translateY(0);
       opacity: 1;
+      pointer-events: auto;
     }
 
-    /* --------------------------------------------------
-       RWD 響應式佈局適配
-    -------------------------------------------------- */
-    @media (max-width: 992px) {
+    /* =========================================================
+       13. 響應式斷點 (Media Queries / RWD)
+       ========================================================= */
+    @media (max-width: 1024px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
         text-align: center;
       }
-      .hero-badge, .hero-cta-group {
+      .hero-content h2 {
+        margin-inline: auto;
+      }
+      .hero-desc {
+        margin-inline: auto;
+      }
+      .hero-buttons {
         justify-content: center;
       }
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
+      .hero-metrics {
+        margin-inline: auto;
       }
-      .about-grid, .brew-grid, .reviews-grid {
+      .hero-visual-card {
+        max-width: 480px;
+        margin: 20px auto 0;
+      }
+      .pillars-grid, .beans-grid, .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .booking-grid {
         grid-template-columns: 1fr;
       }
       .footer-grid {
@@ -1577,1188 +1293,987 @@
     }
 
     @media (max-width: 768px) {
-      .nav-menu, .nav-actions {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--navy-950);
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        transition: right 0.35s ease;
+        padding: 40px;
+        z-index: 1001;
       }
       .nav-menu.open {
+        right: 0;
+      }
+      .menu-toggle {
         display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        padding: 24px;
-        box-shadow: var(--shadow-md);
-        border-bottom: 1px solid var(--border-line);
-        gap: 18px;
+        z-index: 1002;
       }
-      .hero-features-list {
-        grid-template-columns: 1fr;
-        gap: 14px;
+      .header-actions .btn {
+        display: none;
       }
-      .beans-grid {
+      .quiz-options {
         grid-template-columns: 1fr;
       }
-      .newsletter-form {
-        flex-direction: column;
+      .pillars-grid, .beans-grid, .reviews-grid, .steps-row {
+        grid-template-columns: 1fr;
       }
       .footer-grid {
         grid-template-columns: 1fr;
       }
       .footer-bottom {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
         text-align: center;
+      }
+      .quiz-wrapper {
+        padding: 26px 20px;
+      }
+      .booking-form-card {
+        padding: 26px 20px;
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span>
 
-  <!-- ==============================================
-       1. 網站導覽 (Header & Navigation)
-  =============================================== -->
+  <!-- =========================================================
+       1. 導覽列 (Site Header)
+       ========================================================= -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-container">
-      <a href="#hero" class="brand-logo" aria-label="海洋咖啡首頁">
-        <div class="brand-icon">
-          <!-- 咖啡杯與海浪 SVG 圖標 -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
-            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
-            <line x1="6" y1="2" x2="6" y2="4"></line>
-            <line x1="10" y1="2" x2="10" y2="4"></line>
-            <line x1="14" y1="2" x2="14" y2="4"></line>
+      <a href="#top" class="brand-logo" aria-label="海洋咖啡首頁">
+        <div class="brand-icon-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <path d="M12 9v6"></path>
+            <path d="M9 12h6"></path>
           </svg>
         </div>
         <div class="brand-text">
           <h1 class="serif">海洋咖啡</h1>
-          <span class="en-font">OCEAN COFFEE</span>
+          <span>OCEAN COFFEE</span>
         </div>
       </a>
-      <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
 
-      <!-- 電腦版導覽選單 -->
-      <nav aria-label="主要導覽">
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#about" class="nav-link">品牌理念</a></li>
-          <li><a href="#beans" class="nav-link">精選咖啡豆</a></li>
-          <li><a href="#quiz" class="nav-link">命定風味測驗</a></li>
-          <li><a href="#brew" class="nav-link">沖煮指南</a></li>
-          <li><a href="#reviews" class="nav-link">咖啡客好評</a></li>
-          <li><a href="#contact" class="nav-link">門市與聯絡</a></li>
-        </ul>
-      </nav>
+      <!-- 導覽連結 -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#philosophy">品牌理念</a></li>
+        <li><a href="#beans">各種咖啡豆</a></li>
+        <li><a href="#quiz">尋豆測驗</a></li>
+        <li><a href="#guide">品飲指南</a></li>
+        <li><a href="#booking">體驗預約</a></li>
+      </ul>
 
-      <div class="nav-actions">
-        <a href="#beans" class="btn btn-primary btn-sm">探索選豆</a>
+      <div class="header-actions">
+        <a href="#quiz" class="btn btn-gold btn-sm">3秒測出你的命定豆</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="切換選單" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </nav>
-
-      <!-- 手機版漢堡按鈕 -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="開啟選單">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 id="heroTitle">讓風味，在<span>藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button--sand" href="#coffee">探索本季咖啡豆 →</a>
-            <a class="outline-link" href="#story">認識藍天</a>
-  <!-- ==============================================
-       2. Hero 區塊 (主視覺)
-  =============================================== -->
-  <section class="hero-section" id="hero">
-    <div class="hero-glow-1"></div>
-    <div class="hero-glow-2"></div>
-
+  <!-- =========================================================
+       2. 首屏 Hero 區塊 (Hero Section)
+       ========================================================= -->
+  <section class="hero-section" id="top">
+    <div class="hero-bg-waves"></div>
     <div class="container hero-grid">
-      <!-- 左側文案 -->
-      <div class="hero-text-content">
-        <div class="hero-badge en-font">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      
+      <!-- 左側主要標語 -->
+      <div class="hero-content">
+        <span class="badge-pill badge-ocean-dark">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
           </svg>
-          推廣精品咖啡・每週新鮮烘焙
-        </div>
-
-        <h2 class="hero-title serif">
-          在醇厚咖啡香裡，<br>
-          遇見整座海洋的<span class="highlight">深邃與自由</span>
+          推廣各種咖啡豆 · 浩瀚風味航程
+        </span>
+        <h2>
+          如海洋般深邃，<br>
+          讓每一位<span class="highlight-blue">喜歡咖啡</span>的人，<br>
+          愛上<span class="highlight-gold">純粹風味</span>。
         </h2>
-
-        <p class="hero-description">
-          海洋咖啡致力於為每一位喜愛咖啡的朋友，推廣來自世界各大微批次產區的優質咖啡豆。讓每一次注水與品飲，都像迎著海風般令人心動神往。
+        <p class="hero-desc">
+          打破「咖啡只有苦味」的印象！海洋咖啡精選世界各產區豐富多樣的咖啡豆，無論是花果香清亮、堅果可可溫潤，抑或醇厚深沉，我們陪伴你在杯中探索浩瀚風味，找到專屬於你的那一份心動。
         </p>
-
-        <div class="hero-cta-group">
+        <div class="hero-buttons">
           <a href="#beans" class="btn btn-gold">
-            <span>探索精選咖啡豆</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <span>探索各種咖啡豆</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="#quiz" class="btn btn-outline-white">
-            <span>30秒測驗你的命定咖啡</span>
+            <span>3秒測出命定風味</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
           </a>
         </div>
 
-        <!-- 數據指標 -->
-        <div class="hero-features-list">
-          <div class="hero-feature-item">
-            <div class="hero-feature-num en-font">18+</div>
-            <div class="hero-feature-text">全球嚴選單品咖啡豆</div>
+        <!-- 數據特點 -->
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <div class="number">60<span>+</span></div>
+            <span class="label">全球莊園單品豆</span>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
-          <span class="scroll-cue">SCROLL TO DISCOVER</span>
-          <div class="hero-feature-item">
-            <div class="hero-feature-num en-font">100%</div>
-            <div class="hero-feature-text">阿拉比卡精品莊園豆</div>
+          <div class="metric-item">
+            <div class="number">SCA<span>86+</span></div>
+            <span class="label">嚴選杯測卓越標準</span>
           </div>
-          <div class="hero-feature-item">
-            <div class="hero-feature-num en-font">SCA</div>
-            <div class="hero-feature-text">杯測專業認證團隊把關</div>
-          </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain--back"></div>
-          <div class="mountain"></div>
-          <div class="horizon"></div>
-          <div class="coffee-vessel"><div class="vessel-neck"></div><div class="vessel-body"></div><div class="vessel-handle"></div></div>
-          <div class="art-label"><strong>92°C</strong><span>理想水溫</span><span>細細喚醒香氣</span></div>
-      </div>
-
-      <!-- 右側形象卡片 -->
-      <div class="hero-card-showcase">
-        <div class="hero-main-card">
-          <div class="ocean-bean-visual">
-            <div class="ocean-wave-circle"></div>
-            <div class="hero-bean-icon">☕</div>
-            <div class="hero-card-badge en-font">FEATURED OF THE MONTH</div>
-          </div>
-
-          <div class="hero-card-info">
-            <span class="en-font" style="color: var(--ocean-cyan); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;">本季主打・淺中烘焙</span>
-            <h3 class="serif" style="margin-top: 4px;">耶加雪菲・湛藍浪花</h3>
-            <p>綻放白茉莉花香與清爽柑橘甜感，後韻帶著淡淡佛手柑伯爵茶韻。</p>
-            <div class="flavor-pills">
-              <span class="pill">白茉莉花</span>
-              <span class="pill">多汁蜜桃</span>
-              <span class="pill">檸檬柑橘</span>
-              <span class="pill">伯爵茶感</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 浮動小標籤 -->
-        <div class="floating-mini-card">
-          <div class="mini-icon">🌊</div>
-          <div>
-            <strong>海風低溫烘焙技術</strong>
-            <span>保留咖啡豆最細緻的芳香分子</span>
+          <div class="metric-item">
+            <div class="number">100<span>%</span></div>
+            <span class="label">新鮮當季小批次烘焙</span>
           </div>
         </div>
       </div>
-    </section>
-    </div>
 
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-grid">
-        <div class="story-visual reveal" aria-hidden="true">
-          <div class="seal"><div class="seal-inner"><b>B</b><span>慢一點，更清楚。</span><small>LET THE FLAVOUR SPEAK</small></div></div>
-          <aside class="blue-note"><p class="eyebrow">BLUE SKY NOTE</p><p>一杯好咖啡，從來不是匆忙完成的事。</p></aside>
-    <!-- 底部海浪曲線 -->
-    <div class="hero-bg-waves">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-        <path d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,90L1380,90C1320,90,1200,90,1080,90C960,90,840,90,720,90C600,90,480,90,360,90C240,90,120,90,60,90L0,90Z"></path>
-      </svg>
+      <!-- 右側海洋風味視覺卡片 -->
+      <div class="hero-visual-card">
+        <div class="floating-chip chip-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#00b4d8"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A7.003 7.003 0 0 1 5.07 11H5a1 1 0 0 1 0-2h.07A7.003 7.003 0 0 1 11 5.07V5a1 1 0 0 1 2 0v.07A7.003 7.003 0 0 1 18.93 11H19a1 1 0 0 1 0 2h-.07A7.003 7.003 0 0 1 13 16.93z"/></svg>
+          <span>水洗 · 日曬 · 蜜處理</span>
+        </div>
+
+        <div class="visual-ocean-art">
+          <div class="visual-ocean-waves"></div>
+          <!-- 咖啡豆向量插圖 -->
+          <svg class="visual-coffee-bean-svg" viewBox="0 0 100 100" fill="none">
+            <ellipse cx="50" cy="50" rx="34" ry="46" fill="#e5b364" />
+            <path d="M50 8C43 25 38 45 52 50C66 55 60 78 50 92" stroke="#4a2e18" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <h3 class="serif">海洋咖啡 · 風味潮汐</h3>
+        <p>「每一滴咖啡，都如同一場海浪帶來的風土饋贈。」</p>
+
+        <div class="flavor-tag-cloud">
+          <span class="flavor-pill active">茉莉白花</span>
+          <span class="flavor-pill">柑橘甜檸</span>
+          <span class="flavor-pill active">太妃糖焦香</span>
+          <span class="flavor-pill">黑醋栗</span>
+          <span class="flavor-pill">烤堅果</span>
+          <span class="flavor-pill active">波旁可可</span>
+        </div>
+
+        <div class="floating-chip chip-right">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#e5b364"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>讓喝咖啡成為享受</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ==============================================
-       3. 品牌理念：讓客戶愛上咖啡 (About)
-  =============================================== -->
-  <section class="about-section" id="about">
-    <div class="container text-center">
-      <div class="section-eyebrow">Our Philosophy</div>
-      <h2 class="section-title serif">為什麼「海洋咖啡」能讓你深深著迷？</h2>
-      <p class="section-subtitle">
-        我們相信，每顆咖啡豆都承載著大自然的風土密碼。我們以海洋的包容與純淨為靈感，為你撥開咖啡複雜的迷霧，找回品嘗純粹美味的喜悅。
-      </p>
+  <!-- =========================================================
+       3. 品牌理念 (Philosophy: 讓客戶喜歡上咖啡)
+       ========================================================= -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtitle">OUR PHILOSOPHY</span>
+        <h2>為什麼叫<span>海洋咖啡</span>？讓每個人都愛上咖啡</h2>
+        <p>我們相信咖啡的風味就像海洋一樣深廣遼闊。不論你過去是否怕苦、怕酸，在這裡，我們用豐富的咖啡豆為你打開新世界。</p>
+      </div>
 
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 12h20M2 12a10 10 0 0 1 10-10 10 10 0 0 1 10 10M2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10"></path>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
             </svg>
           </div>
-          <h3 class="serif">世界各產區直送</h3>
-          <p>從非洲高海拔花果香、中美洲蜜處理甘甜，到亞洲沉穩濃醇木質調，我們遍尋全球莊園，只為將各具特色的頂級咖啡豆帶到你面前。</p>
+          <h3>打破刻板印象，告別單純苦澀</h3>
+          <p>多數人排斥咖啡是因為接觸了過度烘焙的劣質商業豆。海洋咖啡帶你認識淺焙如水果茶般的清新甘甜，以及中焙堅果太妃糖的溫潤芬芳。</p>
         </div>
-        <div class="story-copy reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，看見產地的<span class="text-blue">晴朗</span>。</h2>
-          <p>我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p>給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="inline-link" href="#brew">看看我們如何沖煮 <span aria-hidden="true">→</span></a>
 
-        <div class="about-card">
-          <div class="about-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
           </div>
-          <h3 class="serif">週週少量新鮮烘焙</h3>
-          <p>堅持接單後精準排程烘焙，嚴格控管咖啡熟成期（養豆期）。拒絕陳舊氧化，確保每一杯沖煮出的咖啡都散發著鮮活明亮的迷人香氣。</p>
+          <h3>各種咖啡豆，包羅世界產區風土</h3>
+          <p>從非洲衣索比亞的花果香、中美洲哥斯大黎加的蜜甜，到亞洲印尼曼特寧的草本厚實，我們搜羅全球各種品種與處理法，呈現在你杯中。</p>
         </div>
 
-        <div class="about-card">
-          <div class="about-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
           </div>
-          <h3 class="serif">輕鬆易懂的風味圖譜</h3>
-          <p>不賣弄艱澀的術語！我們用色彩、溫度與生活中的鮮明滋味（柑橘、巧克力、堅果）標示每一款豆子，無論新手或老饕都能迅速找到摯愛。</p>
+          <h3>零門檻指引，讓喜歡自然發生</h3>
+          <p>我們不講高深難懂的專業術語，而是透過直觀的「風味指南」與「互動尋豆測驗」，陪伴每一位咖啡新手，輕鬆喝出屬於自己的幸福感。</p>
         </div>
       </div>
-    </section>
     </div>
   </section>
 
-    <section class="coffee" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<span class="text-blue">藍天</span>？</h2></div>
-          <p>三款當季單品，為不同的晨光、午後與靜夜而選。</p>
-  <!-- ==============================================
-       4. 各種咖啡豆專區 (Featured Coffee Beans)
-  =============================================== -->
+  <!-- =========================================================
+       4. 各種咖啡豆展區 (Beans Catalog)
+       ========================================================= -->
   <section class="beans-section" id="beans">
     <div class="container">
-      <div class="text-center">
-        <div class="section-eyebrow">Beans Collection</div>
-        <h2 class="section-title serif">嚴選世界各種咖啡豆</h2>
-        <p class="section-subtitle">
-          不論你喜歡清爽明亮的花果酸香，抑或是醇厚回甘的堅果可可，海洋咖啡為您備齊所有美好的風味可能。
-        </p>
+      <div class="section-header">
+        <span class="subtitle">COFFEE BEAN COLLECTION</span>
+        <h2>探索<span>各種咖啡豆</span>的奇幻海洋</h2>
+        <p>點選下方分類篩選，尋找今天最想感受的產區風味。</p>
       </div>
 
-      <!-- 分類標籤篩選 -->
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">全部咖啡豆 (6)</button>
-        <button class="filter-btn" data-filter="light">淺焙・花果香調</button>
-        <button class="filter-btn" data-filter="medium">中焙・甘甜平衡</button>
-        <button class="filter-btn" data-filter="dark">深焙・醇厚苦甜</button>
-        <button class="filter-btn" data-filter="special">特殊處理・極致莊園</button>
+      <!-- 分類標籤篩選按鈕 -->
+      <div class="catalog-filters">
+        <button class="filter-btn active" data-filter="all">全部咖啡豆</button>
+        <button class="filter-btn" data-filter="light">花果香 淺焙</button>
+        <button class="filter-btn" data-filter="medium">堅果可可 中焙</button>
+        <button class="filter-btn" data-filter="dark">醇厚回甘 深焙</button>
+        <button class="filter-btn" data-filter="special">特殊發酵處理法</button>
       </div>
 
-      <!-- 咖啡豆列表卡片 -->
+      <!-- 咖啡豆卡片網格 -->
       <div class="beans-grid" id="beansGrid">
-
-        <!-- 豆款 1 -->
-        <article class="bean-card" data-category="light">
-          <div class="bean-card-header">
-            <span class="bean-roast-badge roast-light">淺焙 Light Roast</span>
-            <div class="bean-origin">ETHIOPIA YIRGACHEFFE</div>
-            <h3 class="bean-title serif">衣索比亞 耶加雪菲・湛藍浪花</h3>
-            <div class="bean-process">水洗處理法 | 海拔 2,100m</div>
+        
+        <!-- 卡片 1: 耶加雪菲 -->
+        <div class="bean-card" data-category="light">
+          <div class="bean-top-meta">
+            <span class="roast-badge roast-light">淺焙 Light Roast</span>
+            <span class="origin-country">衣索比亞 · 耶加雪菲</span>
           </div>
-          <div class="bean-card-body">
-            <div class="bean-flavor-tags">
-              <span class="flavor-tag">茉莉花香</span>
-              <span class="flavor-tag">檸檬柑橘</span>
-              <span class="flavor-tag">水蜜桃</span>
-              <span class="flavor-tag">伯爵紅茶</span>
-            </div>
-
-            <!-- 風味指標 -->
-            <div class="flavor-meters">
-              <div class="meter-row">
-                <span class="meter-label">酸度</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 85%;"></div></div>
-                <span class="meter-val">4.5</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">甜感</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 80%;"></div></div>
-                <span class="meter-val">4.0</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">醇厚</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 40%;"></div></div>
-                <span class="meter-val">2.0</span>
-              </div>
-            </div>
-
-            <p class="bean-desc">如海風拂面般輕盈透亮，入口是淡雅的白茉莉與多汁甜桃，尾韻伴隨高雅的柑橘伯爵茶清香，最適合初嚐手沖的新朋友。</p>
-
-            <div class="bean-card-footer">
-              <div class="bean-price-box">
-                <span class="bean-weight">半磅 (227g)</span>
-                <span class="bean-price">NT$ 420</span>
-              </div>
-              <button class="btn btn-outline-blue btn-sm add-cart-btn" data-name="耶加雪菲・湛藍浪花">
-                <span>加入收藏</span>
-              </button>
-            </div>
+          <h3 class="serif">歌姬 阿里姆 日曬 G1</h3>
+          <span class="bean-subname">ETHIOPIA YIRGACHEFFE NATURAL</span>
+          <p class="bean-desc">如海風拂來的清爽白花香氣，入口帶有熟成黃檸檬與蜂蜜甜感，尾韻是明亮的花果茶芬芳，新手初嚐黑咖啡的最佳首選。</p>
+          <div class="bean-flavor-notes">
+            <span class="flavor-chip">茉莉花香</span>
+            <span class="flavor-chip">佛手柑</span>
+            <span class="flavor-chip">熟成蜜柑</span>
           </div>
-        </article>
-
-        <!-- 豆款 2 -->
-        <article class="bean-card" data-category="special">
-          <div class="bean-card-header">
-            <span class="bean-roast-badge roast-special">特殊批次 Special Batch</span>
-            <div class="bean-origin">PANAMA BOQUETE</div>
-            <h3 class="bean-title serif">巴拿馬 藝伎・太平洋晨曦</h3>
-            <div class="bean-process">厭氧慢速日曬 | 海拔 1,850m</div>
+          <div class="flavor-meters">
+            <div class="meter-row"><span class="meter-label">酸質</span><div class="meter-bar"><div class="meter-fill" style="width: 85%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">甜感</span><div class="meter-bar"><div class="meter-fill" style="width: 80%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">醇厚</span><div class="meter-bar"><div class="meter-fill" style="width: 45%;"></div></div></div>
           </div>
-          <div class="bean-card-body">
-            <div class="bean-flavor-tags">
-              <span class="flavor-tag">橙花精靈</span>
-              <span class="flavor-tag">熱帶百香果</span>
-              <span class="flavor-tag">野生荔枝</span>
-              <span class="flavor-tag">龍眼花蜜</span>
-            </div>
-
-            <div class="flavor-meters">
-              <div class="meter-row">
-                <span class="meter-label">酸度</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 90%;"></div></div>
-                <span class="meter-val">4.8</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">甜感</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 95%;"></div></div>
-                <span class="meter-val">5.0</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">醇厚</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 60%;"></div></div>
-                <span class="meter-val">3.0</span>
-              </div>
-            </div>
-
-            <p class="bean-desc">咖啡界的皇冠寶石！帶有極度奢華的奔放熱帶水果與濃郁蜜香，層次變幻如太平洋清晨的彩霞，令人驚艷難忘。</p>
-
-            <div class="bean-card-footer">
-              <div class="bean-price-box">
-                <span class="bean-weight">1/4 磅 (114g)</span>
-                <span class="bean-price">NT$ 780</span>
-              </div>
-              <button class="btn btn-outline-blue btn-sm add-cart-btn" data-name="巴拿馬 藝伎・太平洋晨曦">
-                <span>加入收藏</span>
-              </button>
-            </div>
+          <div class="bean-bottom">
+            <div class="bean-price">NT$ 480 <span>/ 200g</span></div>
+            <button class="btn-bean-fav" data-bean="衣索比亞・耶加雪菲 歌姬日曬">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              收藏品味
+            </button>
           </div>
-        </article>
+        </div>
 
-        <!-- 豆款 3 -->
-        <article class="bean-card" data-category="medium">
-          <div class="bean-card-header">
-            <span class="bean-roast-badge roast-medium">中焙 Medium Roast</span>
-            <div class="bean-origin">COLOMBIA HUILA</div>
-            <h3 class="bean-title serif">哥倫比亞 薇拉・海灣微風</h3>
-            <div class="bean-process">精緻水洗雙重發酵 | 海拔 1,750m</div>
+        <!-- 卡片 2: 哥倫比亞 -->
+        <div class="bean-card" data-category="special light">
+          <div class="bean-top-meta">
+            <span class="roast-badge roast-light">淺焙 Light Roast</span>
+            <span class="origin-country">哥倫比亞 · 考卡省</span>
           </div>
-          <div class="bean-card-body">
-            <div class="bean-flavor-tags">
-              <span class="flavor-tag">太妃糖</span>
-              <span class="flavor-tag">烤杏仁</span>
-              <span class="flavor-tag">青蘋果酸甜</span>
-              <span class="flavor-tag">紅糖尾韻</span>
-            </div>
-
-            <div class="flavor-meters">
-              <div class="meter-row">
-                <span class="meter-label">酸度</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 60%;"></div></div>
-                <span class="meter-val">3.0</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">甜感</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 85%;"></div></div>
-                <span class="meter-val">4.5</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">醇厚</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 70%;"></div></div>
-                <span class="meter-val">3.5</span>
-              </div>
-            </div>
-
-            <p class="bean-desc">酸甜極度平衡的經典之作。如同溫柔的海風拂過，濃郁的堅果奶油香氣交織著溫潤的紅糖甘甜，每天喝都不會膩。</p>
-
-            <div class="bean-card-footer">
-              <div class="bean-price-box">
-                <span class="bean-weight">半磅 (227g)</span>
-                <span class="bean-price">NT$ 380</span>
-              </div>
-              <button class="btn btn-outline-blue btn-sm add-cart-btn" data-name="哥倫比亞 薇拉・海灣微風">
-                <span>加入收藏</span>
-              </button>
-            </div>
+          <h3 class="serif">天堂莊園 雙重厭氧 玫瑰茶</h3>
+          <span class="bean-subname">COLOMBIA EL PARAISO ANEROBIC</span>
+          <p class="bean-desc">以專利雙重厭氧熱衝擊處理，釋放出不可思議的草莓、水蜜桃果醬與玫瑰花茶香，喝一口就驚呼「這真的是咖啡嗎？」的奇幻之作！</p>
+          <div class="bean-flavor-notes">
+            <span class="flavor-chip">粉紅玫瑰</span>
+            <span class="flavor-chip">水蜜桃</span>
+            <span class="flavor-chip">白桃烏龍</span>
           </div>
-        </article>
-
-        <!-- 豆款 4 -->
-        <article class="bean-card" data-category="medium">
-          <div class="bean-card-header">
-            <span class="bean-roast-badge roast-medium">中焙 Medium Roast</span>
-            <div class="bean-origin">COSTA RICA TARRAZU</div>
-            <h3 class="bean-title serif">哥斯大黎加・深海夜曲</h3>
-            <div class="bean-process">白蜜處理法 | 海拔 1,600m</div>
+          <div class="flavor-meters">
+            <div class="meter-row"><span class="meter-label">酸質</span><div class="meter-bar"><div class="meter-fill" style="width: 75%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">甜感</span><div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">醇厚</span><div class="meter-bar"><div class="meter-fill" style="width: 60%;"></div></div></div>
           </div>
-          <div class="bean-card-body">
-            <div class="bean-flavor-tags">
-              <span class="flavor-tag">草莓果醬</span>
-              <span class="flavor-tag">香草奶油</span>
-              <span class="flavor-tag">烤榛果</span>
-              <span class="flavor-tag">葡萄乾</span>
-            </div>
-
-            <div class="flavor-meters">
-              <div class="meter-row">
-                <span class="meter-label">酸度</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 55%;"></div></div>
-                <span class="meter-val">2.8</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">甜感</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 90%;"></div></div>
-                <span class="meter-val">4.6</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">醇厚</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 75%;"></div></div>
-                <span class="meter-val">3.8</span>
-              </div>
-            </div>
-
-            <p class="bean-desc">充滿音樂家質感的蜜處理微批次豆，帶有濃郁熟果甘甜與滑順香草奶香，口感如絲綢般柔順厚實。</p>
-
-            <div class="bean-card-footer">
-              <div class="bean-price-box">
-                <span class="bean-weight">半磅 (227g)</span>
-                <span class="bean-price">NT$ 460</span>
-              </div>
-              <button class="btn btn-outline-blue btn-sm add-cart-btn" data-name="哥斯大黎加・深海夜曲">
-                <span>加入收藏</span>
-              </button>
-            </div>
+          <div class="bean-bottom">
+            <div class="bean-price">NT$ 620 <span>/ 200g</span></div>
+            <button class="btn-bean-fav" data-bean="哥倫比亞・天堂莊園 雙重厭氧">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              收藏品味
+            </button>
           </div>
-        </article>
+        </div>
 
-        <!-- 豆款 5 -->
-        <article class="bean-card" data-category="dark">
-          <div class="bean-card-header">
-            <span class="bean-roast-badge roast-dark">中深焙 Full City</span>
-            <div class="bean-origin">INDONESIA SUMATRA</div>
-            <h3 class="bean-title serif">蘇門答臘・黑潮曼特寧</h3>
-            <div class="bean-process">傳統濕剝法 (Giling Basah) | 海拔 1,500m</div>
+        <!-- 卡片 3: 瓜地馬拉 -->
+        <div class="bean-card" data-category="medium">
+          <div class="bean-top-meta">
+            <span class="roast-badge roast-medium">中焙 Medium Roast</span>
+            <span class="origin-country">瓜地馬拉 · 安提瓜</span>
           </div>
-          <div class="bean-card-body">
-            <div class="bean-flavor-tags">
-              <span class="flavor-tag">75% 黑巧克力</span>
-              <span class="flavor-tag">雪松木質調</span>
-              <span class="flavor-tag">藥草甘草</span>
-              <span class="flavor-tag">深焙焦糖</span>
-            </div>
-
-            <div class="flavor-meters">
-              <div class="meter-row">
-                <span class="meter-label">酸度</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 20%;"></div></div>
-                <span class="meter-val">1.0</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">甜感</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 70%;"></div></div>
-                <span class="meter-val">3.5</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">醇厚</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 98%;"></div></div>
-                <span class="meter-val">5.0</span>
-              </div>
-            </div>
-
-            <p class="bean-desc">如黑潮深海般沉著濃烈！幾無酸度，展現飽滿而深邃的黑巧克力與草本木質香氣，單喝醇厚、做成拿鐵更是無懈可擊。</p>
-
-            <div class="bean-card-footer">
-              <div class="bean-price-box">
-                <span class="bean-weight">半磅 (227g)</span>
-                <span class="bean-price">NT$ 400</span>
-              </div>
-              <button class="btn btn-outline-blue btn-sm add-cart-btn" data-name="蘇門答臘・黑潮曼特寧">
-                <span>加入收藏</span>
-              </button>
-            </div>
+          <h3 class="serif">花神 拉米尼塔 水洗</h3>
+          <span class="bean-subname">GUATEMALA LA MINITA LA FLOR</span>
+          <p class="bean-desc">經典優雅的代表！火山灰土壤孕育出的溫潤風味，入口充滿烤杏仁與榛果香，中段帶有絲滑黑巧克力甜感，口感圓潤平和。</p>
+          <div class="bean-flavor-notes">
+            <span class="flavor-chip">烤榛果</span>
+            <span class="flavor-chip">黑巧克力</span>
+            <span class="flavor-chip">太妃糖焦甜</span>
           </div>
-        </article>
-
-        <!-- 豆款 6 -->
-        <article class="bean-card" data-category="dark">
-          <div class="bean-card-header">
-            <span class="bean-roast-badge roast-dark">特調深焙 Signature Blend</span>
-            <div class="bean-origin">HOUSE BLEND</div>
-            <h3 class="bean-title serif">海洋航海家・義式配方豆</h3>
-            <div class="bean-process">哥倫比亞 + 巴西 + 瓜地馬拉 黃金比例</div>
+          <div class="flavor-meters">
+            <div class="meter-row"><span class="meter-label">酸質</span><div class="meter-bar"><div class="meter-fill" style="width: 40%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">甜感</span><div class="meter-bar"><div class="meter-fill" style="width: 85%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">醇厚</span><div class="meter-bar"><div class="meter-fill" style="width: 75%;"></div></div></div>
           </div>
-          <div class="bean-card-body">
-            <div class="bean-flavor-tags">
-              <span class="flavor-tag">可可堅果</span>
-              <span class="flavor-tag">黑糖肉桂</span>
-              <span class="flavor-tag">醇厚濃縮 Crema</span>
-              <span class="flavor-tag">奶咖絕配</span>
-            </div>
-
-            <div class="flavor-meters">
-              <div class="meter-row">
-                <span class="meter-label">酸度</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 25%;"></div></div>
-                <span class="meter-val">1.2</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">甜感</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 80%;"></div></div>
-                <span class="meter-val">4.0</span>
-              </div>
-              <div class="meter-row">
-                <span class="meter-label">醇厚</span>
-                <div class="meter-bar-track"><div class="meter-bar-fill" style="width: 95%;"></div></div>
-                <span class="meter-val">4.8</span>
-              </div>
-            </div>
-
-            <p class="bean-desc">專為義式咖啡機與摩卡壺調製的招牌配方，萃取時有著如黃金般的綿密油脂，與牛奶融合後爆發出濃醇的巧克力熔岩滋味。</p>
-
-            <div class="bean-card-footer">
-              <div class="bean-price-box">
-                <span class="bean-weight">一磅 (454g)</span>
-                <span class="bean-price">NT$ 550</span>
-              </div>
-              <button class="btn btn-outline-blue btn-sm add-cart-btn" data-name="海洋航海家・義式配方豆">
-                <span>加入收藏</span>
-              </button>
-            </div>
+          <div class="bean-bottom">
+            <div class="bean-price">NT$ 460 <span>/ 200g</span></div>
+            <button class="btn-bean-fav" data-bean="瓜地馬拉・花神 水洗">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              收藏品味
+            </button>
           </div>
-        </article>
+        </div>
+
+        <!-- 卡片 4: 肯亞 -->
+        <div class="bean-card" data-category="light">
+          <div class="bean-top-meta">
+            <span class="roast-badge roast-light">淺焙 Light Roast</span>
+            <span class="origin-country">肯亞 · 涅里產區</span>
+          </div>
+          <h3 class="serif">奇里圖 水洗 AA Top</h3>
+          <span class="bean-subname">KENYA NYERI GIKIRIMA AA</span>
+          <p class="bean-desc">澎湃如潮水般的烏梅與黑醋栗果汁感！飽滿有勁的多汁酸甜，搭配洛神花茶尾韻，層次分明，是手沖狂熱者不可錯過的高階豆。</p>
+          <div class="bean-flavor-notes">
+            <span class="flavor-chip">黑醋栗</span>
+            <span class="flavor-chip">洛神花</span>
+            <span class="flavor-chip">烏梅酒香</span>
+          </div>
+          <div class="flavor-meters">
+            <div class="meter-row"><span class="meter-label">酸質</span><div class="meter-bar"><div class="meter-fill" style="width: 90%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">甜感</span><div class="meter-bar"><div class="meter-fill" style="width: 75%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">醇厚</span><div class="meter-bar"><div class="meter-fill" style="width: 65%;"></div></div></div>
+          </div>
+          <div class="bean-bottom">
+            <div class="bean-price">NT$ 520 <span>/ 200g</span></div>
+            <button class="btn-bean-fav" data-bean="肯亞・奇里圖 AA 水洗">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              收藏品味
+            </button>
+          </div>
+        </div>
+
+        <!-- 卡片 5: 曼特寧 -->
+        <div class="bean-card" data-category="dark">
+          <div class="bean-top-meta">
+            <span class="roast-badge roast-dark">深焙 Dark Roast</span>
+            <span class="origin-country">印尼 · 蘇門答臘</span>
+          </div>
+          <h3 class="serif">綠寶石 曼特寧 G1 濕剝</h3>
+          <span class="bean-subname">INDONESIA SUMATRA MANDHELING</span>
+          <p class="bean-desc">傳統濕剝法造就獨特醇厚身段，帶有雪松木、濃郁黑糖與草本香氣。完全無酸，入喉回甘悠長，加奶做成拿鐵更是濃郁滑順無比。</p>
+          <div class="bean-flavor-notes">
+            <span class="flavor-chip">雪松草本</span>
+            <span class="flavor-chip">黑糖深甜</span>
+            <span class="flavor-chip">濃醇可可</span>
+          </div>
+          <div class="flavor-meters">
+            <div class="meter-row"><span class="meter-label">酸質</span><div class="meter-bar"><div class="meter-fill" style="width: 15%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">甜感</span><div class="meter-bar"><div class="meter-fill" style="width: 70%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">醇厚</span><div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div></div>
+          </div>
+          <div class="bean-bottom">
+            <div class="bean-price">NT$ 450 <span>/ 200g</span></div>
+            <button class="btn-bean-fav" data-bean="印尼・綠寶石 曼特寧 G1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              收藏品味
+            </button>
+          </div>
+        </div>
+
+        <!-- 卡片 6: 音樂家巴哈 -->
+        <div class="bean-card" data-category="special medium">
+          <div class="bean-top-meta">
+            <span class="roast-badge roast-medium">中淺焙 Med-Light</span>
+            <span class="origin-country">哥斯大黎加 · 塔拉珠</span>
+          </div>
+          <h3 class="serif">音樂家系列 巴哈 葡萄乾蜜處理</h3>
+          <span class="bean-subname">COSTA RICA CANET BACH RAISIN HONEY</span>
+          <p class="bean-desc">如同交響樂般華麗的葡萄乾蜜處理，散發出成熟紅酒、黑櫻桃與楓糖香氣。醇厚度高、甜感極佳，是讓人一試就徹底愛上咖啡的魔力豆！</p>
+          <div class="bean-flavor-notes">
+            <span class="flavor-chip">紅酒發酵香</span>
+            <span class="flavor-chip">黑櫻桃</span>
+            <span class="flavor-chip">楓糖漿</span>
+          </div>
+          <div class="flavor-meters">
+            <div class="meter-row"><span class="meter-label">酸質</span><div class="meter-bar"><div class="meter-fill" style="width: 55%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">甜感</span><div class="meter-bar"><div class="meter-fill" style="width: 90%;"></div></div></div>
+            <div class="meter-row"><span class="meter-label">醇厚</span><div class="meter-bar"><div class="meter-fill" style="width: 80%;"></div></div></div>
+          </div>
+          <div class="bean-bottom">
+            <div class="bean-price">NT$ 580 <span>/ 200g</span></div>
+            <button class="btn-bean-fav" data-bean="哥斯大黎加・音樂家系列 巴哈">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              收藏品味
+            </button>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ==============================================
-       5. 互動功能：30秒找到命定咖啡豆 (Quiz)
-  =============================================== -->
+  <!-- =========================================================
+       5. 核心互動功能：咖啡風味測驗 (Quiz)
+       ========================================================= -->
   <section class="quiz-section" id="quiz">
-    <div class="container text-center">
-      <div class="section-eyebrow" style="color: var(--ocean-cyan);">Flavor Discovery</div>
-      <h2 class="section-title serif" style="color: #ffffff;">30秒探索：你的命定咖啡豆</h2>
-      <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">
-        不知道從哪一款豆子開始？回答 2 個直覺小問題，讓海洋咖啡為你引領最適合今日心情的極致風味！
-      </p>
-
-      <div class="quiz-box">
-        <!-- 步驟 1 -->
-        <div class="quiz-step">
-          <div class="quiz-step-title">
-            <span>01.</span> 你偏好品嚐怎樣的口感風味？
-          </div>
-          <div class="quiz-options" id="quizStep1">
-            <button class="quiz-option" data-flavor="fruity">
-              <span class="quiz-option-title">🌸 輕盈花果香</span>
-              <span class="quiz-option-desc">喜歡柑橘、水蜜桃的清甜微酸，口感純淨乾淨</span>
-            </button>
-            <button class="quiz-option" data-flavor="balanced">
-              <span class="quiz-option-title">🍯 溫潤堅果糖香</span>
-              <span class="quiz-option-desc">喜歡焦糖、太妃糖與堅果，酸苦平衡順口</span>
-            </button>
-            <button class="quiz-option" data-flavor="bold">
-              <span class="quiz-option-title">🍫 醇厚黑巧克力</span>
-              <span class="quiz-option-desc">幾無酸度，熱愛濃郁重焙感、木質香與可可厚度</span>
-            </button>
-          </div>
-        </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="card-top">01 / BRIGHT</div><p class="origin">ETHIOPIA · YIRGACHEFFE</p><h3>衣索比亞・耶加雪菲</h3><p class="flavour">白花、佛手柑、蜂蜜</p>
-            <div class="card-footer"><span class="price">NT$ 520 / 200g</span><button class="save-coffee" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">02 / JUICY</div><p class="origin">KENYA · KIRINYAGA</p><h3>肯亞・祈安布</h3><p class="flavour">黑醋栗、洛神、葡萄柚</p>
-            <div class="card-footer"><span class="price">NT$ 580 / 200g</span><button class="save-coffee" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">03 / ROUND</div><p class="origin">COLOMBIA · HUILA</p><h3>哥倫比亞・慧蘭</h3><p class="flavour">黃桃、焦糖、可可尾韻</p>
-            <div class="card-footer"><span class="price">NT$ 460 / 200g</span><button class="save-coffee" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
-          </article>
-
-        <!-- 步驟 2 -->
-        <div class="quiz-step">
-          <div class="quiz-step-title">
-            <span>02.</span> 你平時最常怎麼喝咖啡？
-          </div>
-          <div class="quiz-options" id="quizStep2">
-            <button class="quiz-option" data-brew="black">
-              <span class="quiz-option-title">☕ 黑咖啡手沖 / 美式</span>
-              <span class="quiz-option-desc">享受單一產區微批次的細緻變化與香氣層次</span>
-            </button>
-            <button class="quiz-option" data-brew="milk">
-              <span class="quiz-option-title">🥛 拿鐵 / 加入燕麥奶</span>
-              <span class="quiz-option-desc">喜歡咖啡與奶香交融後的絲滑醇美飽滿口感</span>
-            </button>
-            <button class="quiz-option" data-brew="ice">
-              <span class="quiz-option-title">🧊 沁涼冰滴 / 冷萃</span>
-              <span class="quiz-option-desc">渴望低溫淬鍊出的甘冽爽口、如威士忌般的風味</span>
-            </button>
-          </div>
-        </div>
-
-        <button class="btn btn-gold" id="calcQuizBtn" style="margin-top: 10px;">
-          <span>探索我的命定咖啡豆</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
-
-        <!-- 測驗結果卡片 -->
-        <div class="quiz-result-card" id="quizResult">
-          <span class="result-badge" id="resultCategory">精準推薦</span>
-          <h3 class="result-title serif" id="resultName">衣索比亞 耶加雪菲・湛藍浪花</h3>
-          <p class="result-desc" id="resultExplanation">
-            根據您的喜好，這款帶有白茉莉花與柑橘明亮果香的淺焙豆，絕對能顛覆您對咖啡酸澀的刻板印象，讓您重新愛上黑咖啡的純淨層次！
-          </p>
-
-          <div class="promo-banner">
-            🎉 <strong>新手愛上咖啡見面禮：</strong> 結帳輸入專屬代碼 <code style="background: #e2edf6; padding: 2px 6px; border-radius: 4px; font-weight: 700; color: var(--ocean-primary);">OCEANLOVE85</code> 現折 15%！
-          </div>
-
-          <a href="#beans" class="btn btn-primary btn-sm">前往查看商品詳情</a>
-        </div>
-      </div>
-    </section>
-    </div>
-  </section>
-
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="wrap brew-grid">
-        <div class="brew-art reveal" aria-hidden="true"><div class="water-rings"></div><div class="dripper"></div><div class="carafe"></div><div class="brew-caption"><span>V60 / 15G : 240ML</span><strong>2'45''</strong></div></div>
-        <div class="brew-copy reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，讓咖啡說<span class="text-blue">自己的話</span>。</h2>
-          <p>不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <div class="brew-steps">
-            <div class="brew-step"><span class="step-number">01</span><div><h3>研磨，先聞見期待</h3><p>15g 中細研磨，讓香氣從指尖開始展開。</p></div></div>
-            <div class="brew-step"><span class="step-number">02</span><div><h3>悶蒸，等待第一個呼吸</h3><p>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</p></div></div>
-            <div class="brew-step"><span class="step-number">03</span><div><h3>注水，保持自己的節奏</h3><p>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</p></div></div>
-  <!-- ==============================================
-       6. 手沖萃取日常 4 步驟 (Brewing Guide & Timer)
-  =============================================== -->
-  <section class="brew-section" id="brew">
-    <div class="container text-center">
-      <div class="section-eyebrow">Brewing Method</div>
-      <h2 class="section-title serif">一杯好咖啡的浪花心法</h2>
-      <p class="section-subtitle">
-        沖煮咖啡就像是一場與水流的平靜對話。只要掌握 4 個關鍵節奏，在家也能輕鬆沖出如精品咖啡館般的極致風味。
-      </p>
-
-      <div class="brew-grid text-center">
-        <!-- 步驟 1 -->
-        <div class="brew-step-card">
-          <div class="brew-step-num en-font">01</div>
-          <h3 class="brew-step-title serif">研磨與水溫</h3>
-          <p class="brew-step-desc">
-            推薦粉水比 <strong>1:15</strong>。以 15g 咖啡豆搭配中粗研磨（如粗海鹽狀），水溫控制在 <strong>90°C - 92°C</strong>，過高容易過萃苦澀，過低則香氣不足。
-          </p>
-        </div>
-
-        <!-- 步驟 2 -->
-        <div class="brew-step-card">
-          <div class="brew-step-num en-font">02</div>
-          <h3 class="brew-step-title serif">均勻悶蒸喚醒</h3>
-          <p class="brew-step-desc">
-            輕柔注入 <strong>35ml</strong> 熱水，使全部咖啡粉浸潤。靜候 <strong>30秒</strong>，觀察咖啡粉層如海潮般膨脹吐氣，釋放豐富的芬芳精油分子。
-          </p>
-        </div>
-
-        <!-- 步驟 3 -->
-        <div class="brew-step-card">
-          <div class="brew-step-num en-font">03</div>
-          <h3 class="brew-step-title serif">同心圓注水</h3>
-          <p class="brew-step-desc">
-            由中心緩慢向外畫圈注水至 140ml，稍作停留；再進行第二段注水至 <strong>225ml</strong>。保持細而穩定的水流，避免直接沖刷濾紙側壁。
-          </p>
-        </div>
-
-        <!-- 步驟 4 -->
-        <div class="brew-step-card">
-          <div class="brew-step-num en-font">04</div>
-          <h3 class="brew-step-title serif">搖勻靜心細品</h3>
-          <p class="brew-step-desc">
-            總萃取時間控制在 <strong>2分15秒 ~ 2分30秒</strong> 移開濾杯。輕輕旋轉下壺使風味融合均勻，隨著溫度稍降，層次更顯清澈甘甜。
-          </p>
-        </div>
+    <div class="container">
+      <div class="section-header" style="color: #ffffff;">
+        <span class="subtitle" style="color: var(--sea-sky);">COFFEE FLAVOR QUIZ</span>
+        <h2 style="color: #ffffff;">3 秒測驗：找尋你的<span>命定咖啡豆</span></h2>
+        <p style="color: rgba(255, 255, 255, 0.8);">不知道從哪一款豆子開始？回答 2 個直覺問題，我們為你推薦最能打動味蕾的一杯！</p>
       </div>
 
-      <!-- 手沖互動計時器 -->
-      <div class="brew-timer-widget">
-        <h3 class="serif" style="color: var(--ocean-navy); font-size: 1.3rem;">⏱️ 手沖實用計時小幫手</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">
-          按「開始沖煮」，照著節奏完成 30 秒悶蒸與 2 分 30 秒完美萃取！
-        </p>
-
-        <div class="timer-display en-font" id="timerDisplay">00:00</div>
-        <div id="timerPrompt" style="font-size: 0.95rem; font-weight: 600; color: var(--ocean-blue); margin-bottom: 16px;">
-          準備好濾杯與手沖壺，點擊開始
+      <div class="quiz-wrapper">
+        <!-- 問題 1 -->
+        <div class="quiz-step">
+          <div class="quiz-step-title">
+            <span class="step-badge">1</span>
+            <span>你最期待在咖啡中感受到什麼樣的香氣？</span>
+          </div>
+          <div class="quiz-options" id="quizQ1">
+            <button type="button" class="quiz-option" data-val="fruity">
+              <strong>🌸 清新花香與多汁果香</strong>
+              <span>像花茶或鮮果汁一樣清爽明亮、尾韻甘甜</span>
+            </button>
+            <button type="button" class="quiz-option" data-val="nutty">
+              <strong>🍫 烤堅果與焦糖黑巧克力</strong>
+              <span>溫潤柔和、酸度低、如熱可可般舒服</span>
+            </button>
+            <button type="button" class="quiz-option" data-val="winey">
+              <strong>🍇 濃郁酒香與成熟果醬</strong>
+              <span>特殊厭氧發酵、甜度爆表、充滿驚奇風味</span>
+            </button>
+            <button type="button" class="quiz-option" data-val="deep">
+              <strong>🌲 厚實深邃與黑糖甘甜</strong>
+              <span>完全不酸、濃郁厚重、加奶也風味十足</span>
+            </button>
+          </div>
         </div>
 
-        <div class="timer-controls">
-          <button class="btn btn-primary btn-sm" id="startTimerBtn">開始計時</button>
-          <button class="btn btn-outline-blue btn-sm" id="resetTimerBtn">重置</button>
+        <!-- 問題 2 -->
+        <div class="quiz-step">
+          <div class="quiz-step-title">
+            <span class="step-badge">2</span>
+            <span>你平時的飲用習慣或經驗是？</span>
+          </div>
+          <div class="quiz-options" id="quizQ2">
+            <button type="button" class="quiz-option" data-val="beginner">
+              <strong>🌱 剛入門黑咖啡 / 以前怕苦</strong>
+              <span>希望喝起來輕鬆順口，打破對咖啡的苦澀印象</span>
+            </button>
+            <button type="button" class="quiz-option" data-val="enthusiast">
+              <strong>☕ 喜歡手沖 / 追求細緻層次</strong>
+              <span>注重產區特性、香氣變化與水溫掌控</span>
+            </button>
+            <button type="button" class="quiz-option" data-val="milky">
+              <strong>🥛 習慣加鮮奶喝拿鐵</strong>
+              <span>需要香濃醇厚不被牛奶蓋過的好咖啡豆</span>
+            </button>
+            <button type="button" class="quiz-option" data-val="adventurer">
+              <strong>✨ 喜歡嘗試罕見新奇風味</strong>
+              <span>越特別、越有故事性的咖啡豆我越想喝！</span>
+            </button>
+          </div>
         </div>
+
+        <div style="text-align: center;">
+          <button type="button" class="btn btn-gold" id="btnRunQuiz" style="padding: 14px 40px; font-size: 1.05rem;">
+            <span>分析我的命定咖啡豆</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- 測驗動態結果卡片 -->
+        <div class="quiz-result-box" id="quizResultBox">
+          <span class="result-badge">YOUR PERFECT MATCH · 專屬推薦</span>
+          <h3 class="result-bean-title" id="resBeanTitle">衣索比亞 耶加雪菲 歌姬日曬 G1</h3>
+          <p class="result-desc" id="resBeanDesc">
+            這款豆子擁有如同晨曦般的茉莉花香與檸檬甜感，完全顛覆咖啡只有苦澀的既定觀念！極其適合剛踏入精品咖啡世界、喜愛清爽優雅風味的你。
+          </p>
+          <div class="result-brew-tip" id="resBrewTip">
+            💡 <strong>海洋沖煮小撇步：</strong> 建議使用 92°C 水溫，中細研磨，粉水比 1:15，以細水流輕柔畫圈，最能釋放迷人花果調！
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="#beans" class="btn btn-gold btn-sm" id="btnGotoBean">查看這款咖啡豆</a>
+            <button type="button" class="btn btn-outline-white btn-sm" id="btnSaveQuizResult">收藏我的測驗結果</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ==============================================
-       7. 顧客推薦與真實評價 (Reviews)
-  =============================================== -->
-  <section class="reviews-section" id="reviews">
-    <div class="container text-center">
-      <div class="section-eyebrow">Community Love</div>
-      <h2 class="section-title serif">喜歡咖啡的人，都這麼說</h2>
-      <p class="section-subtitle">
-        來自全台各地咖啡愛好者的真實回饋，記錄他們在海洋咖啡發現的驚喜時光。
-      </p>
+  <!-- =========================================================
+       6. 沖煮與品飲指南 (How to Fall in Love with Coffee)
+       ========================================================= -->
+  <section class="guide-section" id="guide">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtitle">BREW & ENJOY</span>
+        <h2>四種沖煮方式，遇見<span>各種咖啡豆</span>的最好姿態</h2>
+        <p>每一種咖啡豆都有它最閃耀的時刻，簡單選對器具，在家就能沖出一杯好咖啡。</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16l-3 12H7L4 4z"></path>
+              <path d="M10 16v4"></path>
+              <path d="M14 16v4"></path>
+              <path d="M8 20h8"></path>
+            </svg>
+          </div>
+          <h3>手沖濾杯 (Pour-over)</h3>
+          <span class="suitable-bean">推薦：花果香淺焙豆</span>
+          <p>水流透過濾紙溫柔萃取，能最大程度呈現咖啡豆清澈、精緻的花果酸甜與層次感。</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="4" width="14" height="16" rx="2"></rect>
+              <line x1="12" y1="2" x2="12" y2="4"></line>
+              <line x1="8" y1="8" x2="16" y2="8"></line>
+            </svg>
+          </div>
+          <h3>法壓壺 (French Press)</h3>
+          <span class="suitable-bean">推薦：中深焙堅果豆</span>
+          <p>浸泡式萃取完整保留咖啡油脂，口感最為濃醇滑順，操作零失敗，最適合忙碌的早晨。</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20"></path>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>義式摩卡壺 (Moka Pot)</h3>
+          <span class="suitable-bean">推薦：曼特寧、綜合配方</span>
+          <p>高溫蒸氣萃取出油脂豐厚的濃郁液體，加入熱熱的打發鮮奶，在家即可享用媲美店面的拿鐵。</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 2h10v6a5 5 0 0 1-10 0V2z"></path>
+              <path d="M12 13v9"></path>
+              <path d="M9 22h6"></path>
+            </svg>
+          </div>
+          <h3>冷萃浸泡 (Cold Brew)</h3>
+          <span class="suitable-bean">推薦：酒香與日曬豆</span>
+          <p>在冰箱低溫冷藏 12 小時，酸澀感大幅降低，發酵甜感與酒香濃郁飽滿，夏日消暑首選！</p>
+        </div>
+      </div>
+
+      <!-- 3步驟品味橫幅 -->
+      <div class="tasting-steps-box">
+        <h3 class="serif">新手也能掌握的三步驟品味法：<span>如何喜歡上咖啡？</span></h3>
+        <div class="steps-row">
+          <div class="step-col">
+            <strong>01. 輕輕聞香 (Aroma)</strong>
+            <p>先感受咖啡粉被熱水浸潤時飄散的香氣，是茉莉花香、熟果味還是焦糖可可？喚醒你的嗅覺記憶。</p>
+          </div>
+          <div class="step-col">
+            <strong>02. 大口啜吸 (Slurp)</strong>
+            <p>喝一小口讓咖啡液混合空氣霧化在口腔中，感受舌頭兩側的生津酸甜與舌面的絲滑觸感。</p>
+          </div>
+          <div class="step-col">
+            <strong>03. 感受回甘 (Aftertaste)</strong>
+            <p>吞下後輕閉雙唇呼氣，喉頭會泛起如烏龍茶般持久悠長的回甘，這就是精品咖啡最迷人之處。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. 喜歡咖啡的人評價 (Reviews)
+       ========================================================= -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtitle">COMMUNITY STORIES</span>
+        <h2>來自<span>喜歡咖啡的人</span>真實心聲</h2>
+        <p>在這裡，每一位客人都在各種咖啡豆中找到了自己的心頭好。</p>
+      </div>
 
       <div class="reviews-grid">
         <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">
-            「原本一直覺得黑咖啡很苦很酸，但在試了『耶加雪菲・湛藍浪花』後完全改觀！原來咖啡竟然真的能喝出柑橘水蜜桃果汁的甜味，現在每天早晨不沖一杯都不行！」
-          </p>
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">林</div>
-            <div>
-              <div class="reviewer-name">林小姐・自由設計師</div>
-              <div class="reviewer-tag">購買：淺焙 耶加雪菲</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">
-            「喝手沖咖啡超過十年，海洋咖啡的烘焙品質真的很穩定，尤其是藝伎批次的香氣非常乾淨奔放。豆子新鮮度無可挑剔，包裝的藍色海洋視覺也超級有質感。」
-          </p>
-          <div class="reviewer-info">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">「以前喝便利商店美式都覺得又苦又澀一定要加糖，直到在海洋咖啡喝了耶加雪菲日曬，第一次知道原來咖啡居然可以有這麼甜的花香與蜜柑味！真的徹底愛上了。」</p>
+          <div class="reviewer-meta">
             <div class="reviewer-avatar">陳</div>
-            <div>
-              <div class="reviewer-name">陳先生・資深咖啡同好</div>
-              <div class="reviewer-tag">購買：巴拿馬 藝伎</div>
+            <div class="reviewer-info">
+              <h4>陳雨潔</h4>
+              <span>咖啡新手 · 設計師</span>
             </div>
           </div>
         </div>
 
         <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">
-            「拿來搭配摩卡壺做燕麥奶拿鐵，航海家義式配方豆簡直是神仙組合！厚實綿密的堅果可可香氣完全撐起奶香，完全不輸給外面專業獨立咖啡館。」
-          </p>
-          <div class="reviewer-info">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">「海洋咖啡的豆單非常豐富，從常態的瓜地馬拉到罕見的雙重厭氧玫瑰茶應有盡有。每包豆子都有詳細的沖煮建議參數，即使在家手沖也能百分之百還原店內風味。」</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">林</div>
+            <div class="reviewer-info">
+              <h4>林家緯</h4>
+              <span>手沖愛好者 5 年資歷</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">「用網站上的測驗挑了哥斯大黎加巴哈，做成冰滴咖啡整個辦公室都是葡萄乾和紅酒香，同事喝過全都驚呆了！海洋咖啡把推廣好豆子這件事做得太棒了。」</p>
+          <div class="reviewer-meta">
             <div class="reviewer-avatar">張</div>
-            <div>
-              <div class="reviewer-name">張先生・軟體工程師</div>
-              <div class="reviewer-tag">購買：海洋航海家 配方豆</div>
+            <div class="reviewer-info">
+              <h4>張銘倫</h4>
+              <span>科技業工程師</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
     </div>
   </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 id="visitTitle">把下一杯好咖啡，寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe-form" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="your@email.com" required>
-          <button type="submit">訂閱風味通信</button>
-  <!-- ==============================================
-       8. 電子報訂閱與推廣 (Newsletter & Promotion)
-  =============================================== -->
-  <section class="newsletter-section" id="contact">
-    <div class="container">
-      <div class="newsletter-box">
-        <div class="section-eyebrow" style="color: var(--ocean-cyan);">Join Ocean Club</div>
-        <h2 class="section-title serif">訂閱海洋風味通信</h2>
-        <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.8;">
-          想要接收第一手產區新豆到貨、獨家生豆批次特惠與每月手沖技巧分享嗎？立即加入我們，首次訂閱即贈送 <strong>全品項咖啡豆 85 折優惠券</strong>！
+  <!-- =========================================================
+       8. 體驗預約與訂閱 (Booking & CTA)
+       ========================================================= -->
+  <section class="booking-section" id="booking">
+    <div class="container booking-grid">
+      <div class="booking-info">
+        <span class="badge-pill badge-ocean-dark" style="margin-bottom: 16px;">
+          FLAVOR TASTING LAB
+        </span>
+        <h2>預約一場<span>海洋風味杯測</span>，<br>展開你的咖啡漫遊</h2>
+        <p>
+          想親身一次品嚐 6 種不同產區與處理法的咖啡豆嗎？每週六下午，海洋咖啡首席烘豆師將帶領你透過專業杯測匙，細細辨別不同咖啡豆的獨特香氣。
         </p>
 
-        <form class="newsletter-form" id="newsletterForm">
-          <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="請輸入您的 Email 電子郵件信箱" required>
-          <button type="submit" class="btn btn-gold">立即免費訂閱</button>
-        </form>
-
-        <div class="subscribe-alert" id="subscribeSuccess">
-          ✨ 感謝您的訂閱！85折優惠代碼已寄至您的信箱，歡迎探索海洋咖啡的美妙世界！
+        <div class="booking-perks">
+          <div class="perk-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>零基礎友善，專人解說各種咖啡豆故事</span>
+          </div>
+          <div class="perk-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>現場親手體驗手沖與盲測品味樂趣</span>
+          </div>
+          <div class="perk-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>參加即贈「海洋咖啡當季精選豆」100g 禮盒</span>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+
+      <!-- 預約表單 -->
+      <div class="booking-form-card">
+        <h3 class="serif" style="font-size: 1.4rem; margin-bottom: 20px; color: #ffffff;">預約風味體驗席位</h3>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="bookName">您的姓名</label>
+            <input type="text" id="bookName" class="form-control" placeholder="例：許明恒" required>
+          </div>
+          <div class="form-group">
+            <label for="bookEmail">電子郵件 (收取確認信)</label>
+            <input type="email" id="bookEmail" class="form-control" placeholder="例：coffee@ocean.tw" required>
+          </div>
+          <div class="form-group">
+            <label for="bookSession">選擇品鑑場次</label>
+            <select id="bookSession" class="form-control" style="background-color: var(--navy-900);" required>
+              <option value="sat1">本週六 14:00 - 15:30（淺焙花果香專場）</option>
+              <option value="sat2">本週六 16:30 - 18:00（世界稀有特殊處理法專場）</option>
+              <option value="sun1">下週日 14:00 - 15:30（新手入門・從怕苦到愛上）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bookNotes">最想了解的咖啡豆或任何提問 (選填)</label>
+            <input type="text" id="bookNotes" class="form-control" placeholder="例如：我想了解酸咖啡跟好水洗的差別">
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%; padding: 14px; margin-top: 10px;">
+            立即送出預約申請
+          </button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- ==============================================
+  <!-- =========================================================
        9. 頁尾 (Footer)
-  =============================================== -->
+       ========================================================= -->
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下 一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-title">網站主題</p><div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
-      <div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台中市西屯區僑光路 100 號</address><span>每日 10:00 — 19:00</span></div></div>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <h2 class="serif">海洋咖啡 OCEAN COFFEE</h2>
+        <div class="footer-about">
+          <a href="#top" class="brand-logo">
+            <div class="brand-icon-box" style="width: 38px; height: 38px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="serif" style="font-size: 1.2rem; color: #ffffff; font-weight: 700; letter-spacing: 0.05em;">海洋咖啡</span>
+              <span style="font-size: 0.6rem; color: var(--sea-sky);">OCEAN COFFEE LAB</span>
+            </div>
+          </a>
           <p>
-            在波濤壯闊的海洋彼岸，每一顆咖啡豆都訴說著陽光與雨水的奇蹟。我們為您守候最醇厚的一刻香氣。
+            推廣世界各種咖啡豆，以海洋之名，讓每一位喜歡咖啡的人都能在杯中找到清澈與感動。
           </p>
         </div>
 
-        <div class="footer-links">
-          <h4>快速導覽</h4>
-          <ul>
-            <li><a href="#about">品牌故事</a></li>
-            <li><a href="#beans">精選咖啡豆</a></li>
-            <li><a href="#quiz">命定風味測驗</a></li>
-            <li><a href="#brew">手沖日常指南</a></li>
+        <div>
+          <h4 class="footer-heading">網站導覽</h4>
+          <ul class="footer-links">
+            <li><a href="#philosophy">品牌理念</a></li>
+            <li><a href="#beans">各種咖啡豆</a></li>
+            <li><a href="#quiz">尋豆測驗</a></li>
+            <li><a href="#guide">沖煮與品味指南</a></li>
+            <li><a href="#booking">體驗沙龍預約</a></li>
           </ul>
         </div>
 
-        <div class="footer-links">
-          <h4>咖啡選豆分類</h4>
-          <ul>
-            <li><a href="#beans">淺焙・花果香調</a></li>
-            <li><a href="#beans">中焙・甘甜堅果</a></li>
-            <li><a href="#beans">深焙・醇厚可可</a></li>
-            <li><a href="#beans">特殊微批次處理</a></li>
+        <div>
+          <h4 class="footer-heading">實體品鑑空間</h4>
+          <ul class="footer-contact-list">
+            <li>📍 台北市大安區蔚藍大道 88 號</li>
+            <li>☕ 營業時間：週一至週日 09:30 - 19:30</li>
+            <li>✉️ 信箱：service@oceancoffee.tw</li>
+            <li>📞 電話：(02) 2700-1123</li>
           </ul>
         </div>
 
-        <div class="footer-contact">
-          <h4>實體概念展售店</h4>
-          <p style="line-height: 1.8;">
-            📍 台北市海潮區湛藍路 101 號<br>
-            📞 預約專線：(02) 2345-6789<br>
-            🕒 營業時間：週二至週日 10:00 - 18:30<br>
-            ✉️ 服務信箱：service@oceancoffee.tw
-          </p>
+        <div>
+          <h4 class="footer-heading">訂閱《海洋豆訊》</h4>
+          <p style="font-size: 0.85rem; line-height: 1.6;">每週發送當季最新批次咖啡豆資訊與手沖參數小卡。</p>
+          <form id="newsletterForm" class="footer-newsletter-input">
+            <input type="email" placeholder="輸入您的 Email" required>
+            <button type="submit">訂閱</button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 海洋咖啡 OCEAN COFFEE. All Rights Reserved.</div>
-        <div>規格依據：WebSpec_11515123/specs/outline.md 製作</div>
+        <div>© 2026 海洋咖啡 OCEAN COFFEE. 保留所有權利。</div>
+        <div>推廣各種咖啡 · 陪伴每一個喜歡咖啡的靈魂</div>
       </div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
   </footer>
-  <div class="toast" role="status" aria-live="polite"></div>
 
-  <!-- 提示快顯通知 Toast -->
-  <div class="toast-notice" id="toastNotice">
-    <span id="toastIcon">🌊</span>
-    <span id="toastMsg">已將咖啡豆加入收藏！</span>
+  <!-- =========================================================
+       10. 互動通知 Toast
+       ========================================================= -->
+  <div class="toast-notice" id="toastNotice" role="alert" aria-live="polite">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e5b364" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <div id="toastText">訊息已成功送出！</div>
   </div>
 
-  <!-- ==============================================
-       JavaScript 互動程式碼
-  =============================================== -->
+  <!-- =========================================================
+       11. 互動腳本 (JavaScript)
+       ========================================================= -->
   <script>
-    (() => {
-      const menuButton = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const toast = document.querySelector('.toast');
-      let toastTimer;
-
-      const closeMenu = () => {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', '開啟導覽選單');
-        menuButton.textContent = '☰';
-      };
-      menuButton.addEventListener('click', () => {
-        const opening = !navLinks.classList.contains('open');
-        navLinks.classList.toggle('open', opening);
-        menuButton.setAttribute('aria-expanded', String(opening));
-        menuButton.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
-        menuButton.textContent = opening ? '×' : '☰';
-    document.addEventListener("DOMContentLoaded", function () {
-      // 1. 導航列滾動陰影與透明度變化
-      const siteHeader = document.getElementById("siteHeader");
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) {
-          siteHeader.classList.add("scrolled");
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. 導覽列滾動陰影樣式
+      const header = document.getElementById('siteHeader');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
         } else {
-          siteHeader.classList.remove("scrolled");
+          header.classList.remove('scrolled');
         }
       });
-      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-      const showToast = message => {
-        clearTimeout(toastTimer);
-        toast.textContent = message;
-        toast.classList.add('show');
-        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-      };
-      document.querySelectorAll('[data-coffee]').forEach(button => {
-        button.addEventListener('click', () => showToast(`已將「${button.dataset.coffee}」加入你的收藏。`));
       // 2. 手機版漢堡選單切換
-      const mobileBtn = document.getElementById("mobileMenuBtn");
-      const navMenu = document.getElementById("navMenu");
-      mobileBtn.addEventListener("click", function () {
-        navMenu.classList.toggle("open");
-      });
-      document.querySelector('#subscribeForm').addEventListener('submit', event => {
-        event.preventDefault();
-        event.currentTarget.reset();
-        showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-      // 點擊選單項目後自動關閉手機選單
-      navMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("open");
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navMenu.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', isOpen);
         });
-      });
-
-      const revealItems = document.querySelectorAll('.reveal');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!('IntersectionObserver' in window) || reducedMotion) {
-        revealItems.forEach(item => item.classList.add('visible'));
-      } else {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-      // 3. 咖啡豆分類標籤篩選功能
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const beanCards = document.querySelectorAll(".bean-card");
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener("click", function () {
-          filterBtns.forEach(b => b.classList.remove("active"));
-          this.classList.add("active");
-
-          const filterVal = this.getAttribute("data-filter");
-
-          beanCards.forEach(card => {
-            const category = card.getAttribute("data-category");
-            if (filterVal === "all" || category === filterVal) {
-              card.style.display = "flex";
-            } else {
-              card.style.display = "none";
-            }
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', false);
           });
-        }, { threshold: .12 });
-        revealItems.forEach(item => observer.observe(item));
         });
-      });
-
-      // 4. 命定咖啡互動探索測驗
-      let selectedFlavor = null;
-      let selectedBrew = null;
-
-      const step1Options = document.querySelectorAll("#quizStep1 .quiz-option");
-      const step2Options = document.querySelectorAll("#quizStep2 .quiz-option");
-      const calcBtn = document.getElementById("calcQuizBtn");
-      const resultCard = document.getElementById("quizResult");
-      const resultTitle = document.getElementById("resultName");
-      const resultDesc = document.getElementById("resultExplanation");
-      const resultCat = document.getElementById("resultCategory");
-
-      step1Options.forEach(opt => {
-        opt.addEventListener("click", function () {
-          step1Options.forEach(o => o.classList.remove("selected"));
-          this.classList.add("selected");
-          selectedFlavor = this.getAttribute("data-flavor");
-        });
-      });
-
-      step2Options.forEach(opt => {
-        opt.addEventListener("click", function () {
-          step2Options.forEach(o => o.classList.remove("selected"));
-          this.classList.add("selected");
-          selectedBrew = this.getAttribute("data-brew");
-        });
-      });
-
-      calcBtn.addEventListener("click", function () {
-        if (!selectedFlavor || !selectedBrew) {
-          showToast("⚠️ 請先完成以上 2 個題目的選擇喔！");
-          return;
-        }
-
-        // 根據選擇組合給出精準咖啡推薦
-        let recName = "";
-        let recCat = "";
-        let recText = "";
-
-        if (selectedFlavor === "fruity") {
-          recName = "衣索比亞 耶加雪菲・湛藍浪花 (淺焙)";
-          recCat = "花果香清爽系首選";
-          recText = "您擁有敏銳純淨的味覺！這款白茉莉花與柑橘明亮果香的淺焙豆，能帶給您如清晨浪花般的甘甜與輕快！";
-        } else if (selectedFlavor === "balanced") {
-          recName = "哥倫比亞 薇拉・海灣微風 (中焙)";
-          recCat = "溫潤平衡百搭之王";
-          recText = "您熱愛滑順怡人的咖啡香氣！這款中度烘焙帶有烤堅果與太妃糖甜感的莊園豆，無論黑咖啡或加少許燕麥奶，都能呈現極佳的圓潤口感。";
-        } else {
-          recName = "蘇門答臘・黑潮曼特寧 (中深焙)";
-          recCat = "深邃醇濃黑巧代表";
-          recText = "您著迷於濃郁飽滿的咖啡厚度！低酸度、帶有濃郁黑巧克力與草本木質調的深焙曼特寧，入口回甘悠長，搭配牛奶更如同甜點般豐厚！";
-        }
-
-        resultCat.textContent = recCat;
-        resultTitle.textContent = recName;
-        resultDesc.textContent = recText;
-        resultCard.style.display = "block";
-        resultCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      });
-
-      // 5. 手沖計時器小工具
-      let timerInterval = null;
-      let totalSeconds = 0;
-      let isRunning = false;
-
-      const timerDisplay = document.getElementById("timerDisplay");
-      const timerPrompt = document.getElementById("timerPrompt");
-      const startBtn = document.getElementById("startTimerBtn");
-      const resetBtn = document.getElementById("resetTimerBtn");
-
-      function formatTime(sec) {
-        const m = Math.floor(sec / 60).toString().padStart(2, "0");
-        const s = (sec % 60).toString().padStart(2, "0");
-        return `${m}:${s}`;
-      }
-    })();
-
-      function updateTimerPrompt(sec) {
-        if (sec < 30) {
-          timerPrompt.textContent = "💧 第 1 階段：注入 35ml 熱水，悶蒸排氣中 (0:00 ~ 0:30)";
-          timerPrompt.style.color = "#0077b6";
-        } else if (sec < 90) {
-          timerPrompt.textContent = "🌊 第 2 階段：第一段注水至 140ml，由內而外平穩繞圈 (0:30 ~ 1:30)";
-          timerPrompt.style.color = "#0096c7";
-        } else if (sec < 150) {
-          timerPrompt.textContent = "☕ 第 3 階段：第二段注水至 225ml，萃取飽滿甜感 (1:30 ~ 2:30)";
-          timerPrompt.style.color = "#023e8a";
-        } else {
-          timerPrompt.textContent = "✨ 沖煮完成！移開濾杯，搖勻享用這杯美妙的海洋咖啡！";
-          timerPrompt.style.color = "#2a9d8f";
-        }
       }
 
-      startBtn.addEventListener("click", function () {
-        if (!isRunning) {
-          isRunning = true;
-          startBtn.textContent = "暫停計時";
-          startBtn.classList.remove("btn-primary");
-          startBtn.classList.add("btn-gold");
+      // 3. 通用 Toast 提示函式
+      const toast = document.getElementById('toastNotice');
+      const toastText = document.getElementById('toastText');
+      let toastTimer = null;
 
-          timerInterval = setInterval(() => {
-            totalSeconds++;
-            timerDisplay.textContent = formatTime(totalSeconds);
-            updateTimerPrompt(totalSeconds);
-          }, 1000);
-        } else {
-          isRunning = false;
-          clearInterval(timerInterval);
-          startBtn.textContent = "繼續計時";
-          startBtn.classList.add("btn-primary");
-          startBtn.classList.remove("btn-gold");
-        }
-      });
-
-      resetBtn.addEventListener("click", function () {
-        isRunning = false;
-        clearInterval(timerInterval);
-        totalSeconds = 0;
-        timerDisplay.textContent = "00:00";
-        timerPrompt.textContent = "準備好濾杯與手沖壺，點擊開始";
-        timerPrompt.style.color = "var(--ocean-blue)";
-        startBtn.textContent = "開始計時";
-        startBtn.classList.add("btn-primary");
-        startBtn.classList.remove("btn-gold");
-      });
-
-      // 6. 加入收藏與提示快訊 (Toast Notice)
-      const toast = document.getElementById("toastNotice");
-      const toastMsg = document.getElementById("toastMsg");
-      let toastTimeout = null;
-
-      function showToast(message) {
-        toastMsg.textContent = message;
-        toast.classList.add("show");
-        if (toastTimeout) clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-          toast.classList.remove("show");
+      function triggerToast(msg) {
+        if (!toast || !toastText) return;
+        clearTimeout(toastTimer);
+        toastText.textContent = msg;
+        toast.classList.add('show');
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
         }, 3200);
       }
 
-      document.querySelectorAll(".add-cart-btn").forEach(btn => {
-        btn.addEventListener("click", function () {
-          const beanName = this.getAttribute("data-name");
-          showToast(`已將「${beanName}」加入您的心動咖啡清單！`);
+      // 4. 咖啡豆分類標籤篩選 (Tab Filter)
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const beanCards = document.querySelectorAll('.bean-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const category = btn.dataset.filter;
+          beanCards.forEach(card => {
+            if (category === 'all') {
+              card.style.display = 'flex';
+            } else {
+              const cardCats = card.dataset.category.split(' ');
+              if (cardCats.includes(category)) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            }
+          });
         });
       });
 
-      // 7. 電子報表單送出事件
-      const newsletterForm = document.getElementById("newsletterForm");
-      const subscribeSuccess = document.getElementById("subscribeSuccess");
-
-      newsletterForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const email = document.getElementById("newsletterEmail").value.trim();
-        if (email) {
-          subscribeSuccess.style.display = "block";
-          newsletterForm.reset();
-          showToast("🎉 訂閱成功！85折優惠碼已寄發！");
-        }
+      // 5. 咖啡豆收藏點擊回饋
+      document.querySelectorAll('.btn-bean-fav').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const beanName = btn.dataset.bean;
+          triggerToast(`已將「${beanName}」加入您的風味清單！`);
+          btn.style.backgroundColor = 'var(--ocean-blue)';
+          btn.style.color = '#ffffff';
+          btn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            已收藏
+          `;
+        });
       });
+
+      // 6. 核心互動：咖啡風味測驗 (Quiz)
+      let selectedQ1 = null;
+      let selectedQ2 = null;
+
+      const q1Options = document.querySelectorAll('#quizQ1 .quiz-option');
+      const q2Options = document.querySelectorAll('#quizQ2 .quiz-option');
+
+      q1Options.forEach(opt => {
+        opt.addEventListener('click', () => {
+          q1Options.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          selectedQ1 = opt.dataset.val;
+        });
+      });
+
+      q2Options.forEach(opt => {
+        opt.addEventListener('click', () => {
+          q2Options.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          selectedQ2 = opt.dataset.val;
+        });
+      });
+
+      const btnRunQuiz = document.getElementById('btnRunQuiz');
+      const quizResultBox = document.getElementById('quizResultBox');
+      const resBeanTitle = document.getElementById('resBeanTitle');
+      const resBeanDesc = document.getElementById('resBeanDesc');
+      const resBrewTip = document.getElementById('resBrewTip');
+
+      const quizRecommendations = {
+        fruity: {
+          title: "衣索比亞 耶加雪菲 歌姬日曬 G1",
+          desc: "散發出晨曦般的茉莉花香與清爽柑橘蜂蜜甜，酸質如水果茶般清亮多汁！徹底打破你對咖啡苦澀的想像，是踏入精品咖啡殿堂的第一首選！",
+          tip: "💡 海洋沖煮小撇步：水溫 92°C，研磨度中細，粉水比 1:15，以三段均勻注水，花果香氣最為奔放！"
+        },
+        nutty: {
+          title: "瓜地馬拉 花神 安提瓜水洗",
+          desc: "溫潤圓滿的烤杏仁與黑巧克力香氣，酸度極為柔和，餘韻如焦糖太妃糖般滑順舒暢，最適合想在午後靜靜品味一杯溫暖的你。",
+          tip: "💡 海洋沖煮小撇步：水溫 89°C，水流可略粗，萃取時間控制在 2 分 15 秒內，能品味到最厚實的堅果甜感！"
+        },
+        winey: {
+          title: "哥倫比亞 天堂莊園 雙重厭氧 玫瑰茶",
+          desc: "宛如施了魔法的特殊處理法！入口是驚人的粉紅玫瑰、草莓果醬與白桃烏龍茶香，甜感飽滿充沛，喝過一次就絕對難以忘懷！",
+          tip: "💡 海洋沖煮小撇步：使用 90°C 水溫，悶蒸時間延長至 35 秒，特殊厭氧的發酵果香將完全綻放！"
+        },
+        deep: {
+          title: "印尼 蘇門答臘 綠寶石曼特寧 G1",
+          desc: "完全零酸度！充滿雪松、黑糖深甜與濃郁可可香氣。如果你熱愛濃烈厚重、尾韻悠長回甘，或是想加鮮奶自製香濃拿鐵，這絕對是你的命定豆。",
+          tip: "💡 海洋沖煮小撇步：使用法壓壺或摩卡壺萃取，或是手沖 88°C 慢速注水，能帶出最極致的醇厚油脂感！"
+        }
+      };
+
+      if (btnRunQuiz) {
+        btnRunQuiz.addEventListener('click', () => {
+          if (!selectedQ1) {
+            triggerToast('請先選擇第 1 題你期待的香氣風味！');
+            return;
+          }
+          if (!selectedQ2) {
+            triggerToast('請先選擇第 2 題你的飲用習慣！');
+            return;
+          }
+
+          let matchedKey = selectedQ1;
+          if (selectedQ2 === 'milky' && selectedQ1 !== 'fruity') {
+            matchedKey = 'deep';
+          } else if (selectedQ2 === 'adventurer' && selectedQ1 !== 'deep') {
+            matchedKey = 'winey';
+          }
+
+          const matchData = quizRecommendations[matchedKey] || quizRecommendations['fruity'];
+          resBeanTitle.textContent = matchData.title;
+          resBeanDesc.textContent = matchData.desc;
+          resBrewTip.innerHTML = matchData.tip;
+
+          quizResultBox.classList.add('active');
+          quizResultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          triggerToast('命定咖啡豆分析完成！');
+        });
+      }
+
+      const btnSaveQuizResult = document.getElementById('btnSaveQuizResult');
+      if (btnSaveQuizResult) {
+        btnSaveQuizResult.addEventListener('click', () => {
+          const beanTitle = resBeanTitle.textContent;
+          triggerToast(`已為您儲存測驗推薦豆款：「${beanTitle}」！`);
+        });
+      }
+
+      // 7. 品味沙龍預約表單提交
+      const bookingForm = document.getElementById('bookingForm');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('bookName').value;
+          triggerToast(`預約成功！感謝 ${name}，我們已將品鑑確認信寄至您的信箱。`);
+          bookingForm.reset();
+        });
+      }
+
+      // 8. 電子報訂閱表單提交
+      const newsletterForm = document.getElementById('newsletterForm');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          triggerToast('感謝訂閱《海洋豆訊》，最新咖啡產區故事已啟航！');
+          newsletterForm.reset();
+        });
+      }
     });
   </script>
 </body>
